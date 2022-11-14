@@ -1,0 +1,33 @@
+.arrows {
+  cursor: pointer;
+  height: 80px;
+  position: absolute;
+  bottom: 00px;
+  left: calc(50% - 30px);
+  margin: 20px auto;
+  text-align: center;
+  width: 60px;
+  z-index: 5;
+  path {
+    animation: arrow 2s infinite;
+    fill: transparent;
+    stroke-width: 3px;  
+    stroke: #fff;
+    &.a1 {
+      animation-delay: -1s;
+    }
+    &.a2 {
+      animation-delay: -0.5s;
+    }
+    &.a3 { 
+      animation-delay: 0s;
+    }
+  }
+}
+
+@keyframes arrow {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+}
