@@ -16,6 +16,10 @@ import PhotoHeadline from './components/PhotoHeadline.jsx';
 import Recommendations from './components/Recommendations.jsx';
 import Footer from './components/Footer.jsx';
 
+import Figure10 from './Figure10.jsx';
+import Figure07 from './Figure07.jsx';
+import Figure01 from './Figure01.jsx';
+
 // const appID = '#app-root-2022-rmt_report';
 
 const analytics = window.gtag || undefined;
@@ -192,7 +196,7 @@ function App() {
               </div>
             </div>
             <div className="right_column">
-              GRAPH ON THE TOPIC
+              <Figure10 />
               <Recommendations headline="UNCTAD calls on" recommendation_list={['1', '2', '3']} />
             </div>
           </div>
@@ -226,6 +230,7 @@ function App() {
               </div>
             </div>
             <div className="right_column">
+              <Figure07 />
               <Recommendations headline="UNCTAD calls on" recommendation_list={['1', '2', '3']} />
             </div>
           </div>
@@ -263,6 +268,7 @@ function App() {
               </div>
             </div>
             <div className="right_column">
+              <Figure01 />
               <Recommendations headline="UNCTAD calls on" recommendation_list={['1', '2', '3']} />
             </div>
           </div>
