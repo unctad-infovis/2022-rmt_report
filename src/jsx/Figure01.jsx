@@ -48,6 +48,7 @@ function Figure01() {
     <div className="app">
       {dataFigure && (
       <ChartLine
+        change
         data={dataFigure}
         data_decimals={1}
         idx="01"
