@@ -49,9 +49,9 @@ function Figure01() {
       {dataFigure && (
       <ChartLine
         data={dataFigure}
-        data_decimals={0}
+        data_decimals={1}
         idx="01"
-        note="Data between 2023 and 2027 are projections"
+        note="Data for 2023 to 2027 are projections."
         plot_lines={[{
           color: '#aaa096',
           label: {
