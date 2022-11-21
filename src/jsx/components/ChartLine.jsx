@@ -345,6 +345,11 @@ function LineChart({
         max: ymax,
         min: ymin,
         opposite: false,
+        plotLines: (ymin < 0) ? [{
+          color: '#aaa096',
+          value: 0,
+          width: 1
+        }] : undefined,
         showFirstLabel: true,
         showLastLabel: true,
         tickInterval: ytick_interval,
