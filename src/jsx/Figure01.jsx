@@ -104,7 +104,6 @@ function Figure01() {
         ytick_interval={2}
       />
       )}
-      <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }

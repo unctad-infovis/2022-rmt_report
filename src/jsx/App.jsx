@@ -129,7 +129,7 @@ function App() {
           lockX: false,
           lockY: false,
           top: 0,
-          topOffset: 100
+          topOffset: 0
         },
         cancellable: false,
         time: 1000
@@ -330,8 +330,8 @@ function App() {
           </div>
         </div>
       </div>
-      <noscript>Your browser does not support JavaScript!</noscript>
       <Footer />
+      <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }

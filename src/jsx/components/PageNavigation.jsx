@@ -34,18 +34,15 @@ function PageNavigation({ appRef }) {
     }, 50);
   };
   return (
-    <>
-      <div className="pagenavigation_container">
-        <div className="navigation">
-          <div className="button_container"><button type="button" onClick={() => anchorClick('.anchor_video', 'Videos')}>Videos</button></div>
-          <div className="button_container"><button type="button" onClick={() => anchorClick('.anchor_downloads', 'Downloads')}>Downloads</button></div>
-          <div className="button_container"><button type="button" onClick={() => anchorClick('.anchor_press', 'Press')}>Press</button></div>
-          <div className="button_container"><button type="button" onClick={() => anchorClick('.anchor_podcasts', 'Podcasts')}>Podcast</button></div>
-          <div className="button_container"><a href="https://unctad.org/publications-search?f[0]=product%3A392" onClick={() => track('Previous reports')}>Previous reports</a></div>
-        </div>
+    <div className="pagenavigation_container">
+      <div className="navigation">
+        <div className="button_container"><button type="button" onClick={() => anchorClick('.anchor_video', 'Videos')}>Videos</button></div>
+        <div className="button_container"><button type="button" onClick={() => anchorClick('.anchor_downloads', 'Downloads')}>Downloads</button></div>
+        <div className="button_container"><button type="button" onClick={() => anchorClick('.anchor_press', 'Press')}>Press</button></div>
+        <div className="button_container"><button type="button" onClick={() => anchorClick('.anchor_podcasts', 'Podcasts')}>Podcast</button></div>
+        <div className="button_container"><a href="https://unctad.org/publications-search?f[0]=product%3A392" onClick={() => track('Previous reports')}>Previous reports</a></div>
       </div>
-      <noscript>Your browser does not support JavaScript!</noscript>
-    </>
+    </div>
   );
 }
 

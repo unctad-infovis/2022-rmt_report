@@ -56,7 +56,6 @@ function Figure10() {
         ytick_interval={20}
       />
       )}
-      <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }

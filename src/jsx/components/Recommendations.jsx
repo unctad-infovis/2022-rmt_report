@@ -7,24 +7,21 @@ import IsVisible from 'react-is-visible';
 
 function Recommendations({ headline, recommendation_list }) {
   return (
-    <>
-      <IsVisible once>
-        {(isVisible) => (
-          <div className={`recommendations_container ${(isVisible) ? 'visible' : ''}`}>
-            <h3>{headline}</h3>
-            <ul>
-              {recommendation_list && recommendation_list.map((el, i) => (
-                <li key={el}>
-                  <div className="list_indicator">{i + 1}</div>
-                  <div className="list_text">{el}</div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-      </IsVisible>
-      <noscript>Your browser does not support JavaScript!</noscript>
-    </>
+    <IsVisible once>
+      {(isVisible) => (
+        <div className={`recommendations_container ${(isVisible) ? 'visible' : ''}`}>
+          <h3>{headline}</h3>
+          <ul>
+            {recommendation_list && recommendation_list.map((el, i) => (
+              <li key={el}>
+                <div className="list_indicator">{i + 1}</div>
+                <div className="list_text">{el}</div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </IsVisible>
   );
 }
 
