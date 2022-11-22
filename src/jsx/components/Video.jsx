@@ -14,7 +14,12 @@ function Video({ anchorClick }) {
     videoRef.current.poster = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/assets/img/' : './assets/img/') + ((videoRef.current.offsetWidth < 768) ? '2022-rmt_report_section-min.jpg' : '2022-rmt_report_section-min.jpg');
     if (!videoRef.current.playing) {
       videoRef.current.play();
-      reportHeadline.current.classList.add('show');
+      const interval = setInterval(() => {
+        if (videoRef.current.currentTime > 3) {
+          reportHeadline.current.classList.add('show');
+          clearInterval(interval);
+        }
+      }, 100);
     }
   }, []);
   return (
