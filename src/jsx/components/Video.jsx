@@ -16,6 +16,7 @@ function Video({ anchorClick }) {
       videoRef.current.play();
       const interval = setInterval(() => {
         if (videoRef.current.currentTime > 3) {
+          document.querySelector('body').style.overflow = 'scroll';
           reportHeadline.current.classList.add('show');
           clearInterval(interval);
         }
@@ -26,7 +27,9 @@ function Video({ anchorClick }) {
   useEffect(() => {
     videoRef.current.addEventListener('ended', () => {
       videoRef.current.play();
-      anchorClick('.pagenavigation_container', 'Video ended');
+      if (document.documentElement.scrollTop === 0) {
+        anchorClick('.pagenavigation_container', 'Video ended');
+      }
     });
   }, [anchorClick]);
 
