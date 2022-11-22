@@ -299,7 +299,7 @@ function ColumnChart({
             fontSize: '16px',
             fontWeight: 400
           },
-          text: '',
+          text: null,
           verticalAlign: 'top',
           x: 94,
           y: -25

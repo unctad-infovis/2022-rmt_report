@@ -362,7 +362,7 @@ function LineChart({
             fontSize: '16px',
             fontWeight: 400
           },
-          text: null,
+          text: null
         },
         type: 'linear'
       }

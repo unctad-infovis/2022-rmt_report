@@ -92,12 +92,12 @@ function Figure01() {
           value: Date.UTC(2020, 0, 1),
           width: 0
         }]}
-        source="UNCTAD secretariat, based on UNCTADstat data and Review of Maritime Transport, various issues. GDP figure for 2022 based on table 1.1, World Output Growth, 1991–2023, UNCTAD Trade and Development Report 2022"
-        subtitle="International maritime trade and world gross domestic product (GDP), percentage annual change"
+        source="UNCTAD secretariat, based on UNCTADstat data and Review of Maritime Transport, various issues."
+        subtitle="International maritime trade, percentage annual change"
         line_width={3}
         show_only_first_and_last_labels={false}
         suffix="%"
-        title="Maritime trade and global GDP are closely related"
+        title="Maritime trade recovered in 2021 but is projected to slow down"
         ylabel=""
         ymax={10}
         ymin={-6}
