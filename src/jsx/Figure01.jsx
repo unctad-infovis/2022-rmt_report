@@ -52,7 +52,7 @@ function Figure01() {
         data={dataFigure}
         data_decimals={1}
         idx="01"
-        note="Data for 2023 to 2027 are projections."
+        note="Data for 2022 are projections and for 2023 to 2027 are forecasts."
         plot_lines={[{
           color: '#aaa096',
           label: {

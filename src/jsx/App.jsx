@@ -244,7 +244,7 @@ function App() {
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
-                      The report says the container shipping sector has been transformed by horizontal consolidation through mergers and acquisitions. Shipping carriers have also pursued vertical integration by investing in terminal operations and other logistics services
+                      The report says the container shipping sector has been transformed by horizontal consolidation through mergers and acquisitions. Shipping carriers have also pursued vertical integration by investing in terminal operations and other logistics services.
                       <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Highlight</span>
                     </p>
                   )}
