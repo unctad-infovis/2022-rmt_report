@@ -5,14 +5,17 @@ function Video({ anchorClick }) {
   const videoRef = useRef();
   const mp4Ref = useRef();
   const webmRef = useRef();
+  const reportHeadline = useRef();
+
   useEffect(() => {
     videoRef.current.src = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/assets/vid/' : './assets/vid/') + ((videoRef.current.offsetWidth < 768) ? '2022-rmt_report_video.mp4' : '2022-rmt_report_video.mp4');
     mp4Ref.current.src = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/assets/vid/' : './assets/vid/') + ((videoRef.current.offsetWidth < 768) ? '2022-rmt_report_video.mp4' : '2022-rmt_report_video.mp4');
     webmRef.current.src = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/assets/vid/' : './assets/vid/') + ((videoRef.current.offsetWidth < 768) ? '2022-rmt_report_video.webm' : '2022-rmt_report_video.webm');
     videoRef.current.poster = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/assets/img/' : './assets/img/') + ((videoRef.current.offsetWidth < 768) ? '2022-rmt_report_section-min.jpg' : '2022-rmt_report_section-min.jpg');
-    // if (!videoRef.current.playing) {
-    // videoRef.current.play();
-    // }
+    if (!videoRef.current.playing) {
+      videoRef.current.play();
+      reportHeadline.current.classList.add('show');
+    }
   }, []);
   return (
     <>
@@ -27,7 +30,7 @@ function Video({ anchorClick }) {
           <h4 className="report_year">
             2022
           </h4>
-          <h4 className="report_headline">
+          <h4 className="report_headline" ref={reportHeadline}>
             <div>Navigating</div>
             <div>stormy waters</div>
           </h4>
