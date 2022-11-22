@@ -73,46 +73,110 @@
     }
     .title_container {
       margin: auto auto;
-      max-width: 1000px;
       position: relative;
       h4 {
-        box-sizing: border-box;
-        color: #fff;
+        margin: 0;
         font-family: Roboto Condensed, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 46px;
-        font-weight: 400;
-        line-height: 46px;
-        margin: 0 0 0 0;
-        padding: 30px;
-        position: absolute;
-        text-align: center;
-        text-transform: uppercase;
-        top: 20px;
-        vertical-align: middle;
-        width: 100%;
-        z-index: 3;
-        @media all and (max-width: 1000px) {
-          top: 20px;
-        }
-        @media all and (max-width: 900px) {
-          font-size: 36px;  
-          line-height: 36px;  
-        }
-        @media all and (max-width: 700px) {
-          top: 20px;
-          font-size: 30px;  
-          line-height: 30px;  
-        }
-        @media all and (max-width: 400px) {
-          top: 5px;
-          font-size: 20px;  
-          line-height: 20px;  
-        }
-        .year {
+        &.report_title {
+          background-color: rgba(0, 158, 219, 0.5);
           color: #fff;
-          font-weight: 700;
-          line-height: 46px;
+          font-size: 60px;
+          font-weight: 400;
+          left: 0;
+          line-height: 66px;
+          padding: 40px 20px 20px 20px;
+          position: absolute;
+          text-transform: uppercase;
+          top: 0;
+          z-index: 2;
+          @media all and (max-width: 767px) {
+            font-size: 56px;
+            line-height: 56px;
+          }
+          @media all and (max-width: 700px) {
+            font-size: 50px;
+            line-height: 50px;
+          }
+          @media all and (max-width: 470px) {
+            font-size: 40px;
+            line-height: 40px;
+          }
+          @media all and (max-width: 350px) {
+            font-size: 36px;
+            line-height: 36px;
+          }
+          .big {
+            font-size: 110px;
+            font-weight: 600;
+            line-height: 110px;
+            @media all and (max-width: 767px) {
+              font-size: 100px;
+              line-height: 100px;
+            }
+            @media all and (max-width: 700px) {
+              font-size: 90px;
+              line-height: 90px;
+            }
+            @media all and (max-width: 470px) {
+              font-size: 72px;
+              line-height: 72px;
+            }
+            @media all and (max-width: 350px) {
+              font-size: 64px;
+              line-height: 64px;
+            }
+          }
+          .year {
+            display: none;
+            @media all and (max-width: 767px) {
+              display: block;
+            }
+          }
+        }
+        &.report_year {
+          color: #fff;
+          display: none;
+          font-size: 100px;
+          font-weight: 600;
+          line-height: 100px;
+          position: absolute;
+          right: 20px;
+          top: 40px;
+          z-index: 2;
+          @media all and (min-width: 768px) {
+            display: block;
+          }
+        }
+        &.report_headline {
+          align-items: center;
+          color: #fff;
+          display: flex;
+          flex-direction: column;
+          font-size: 120px;
+          font-weight: 600;
+          height: 100vh;
+          justify-content: center;
+          line-height: 120px;
           position: relative;
+          text-align: center;
+          text-shadow: 1px 1px 1px #000;
+          z-index: 2;
+          @media all and (max-width: 767px) {
+            font-size: 100px;
+            line-height: 100px;
+          }
+          @media all and (max-width: 700px) {
+            font-size: 80px;
+            line-height: 80px;
+          }
+          @media all and (max-width: 470px) {
+            font-size: 60px;
+            line-height: 60px;
+          }
+          @media all and (max-width: 350px) {
+            font-size: 50px;
+            line-height: 50px;
+          }
         }
       }
     }
