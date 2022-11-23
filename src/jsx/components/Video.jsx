@@ -31,7 +31,7 @@ function Video({ anchorClick }) {
     videoRef.current.addEventListener('ended', () => {
       videoRef.current.play();
       if (document.documentElement.scrollTop === 0) {
-        // anchorClick('.pagenavigation_container', 'Video ended');
+        anchorClick('.pagenavigation_container', 'Video ended');
       }
     });
   }, [anchorClick]);

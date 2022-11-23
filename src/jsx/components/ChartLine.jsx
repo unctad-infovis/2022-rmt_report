@@ -208,7 +208,7 @@ function LineChart({
         rules: [{
           chartOptions: {
             title: {
-              margin: 10
+              margin: 20
             }
           },
           condition: {
