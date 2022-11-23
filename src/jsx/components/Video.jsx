@@ -22,6 +22,9 @@ function Video({ anchorClick }) {
         }
       }, 100);
     }
+    if (document.documentElement.scrollTop > 0) {
+      document.querySelector('body').style.overflow = 'scroll';
+    }
   }, []);
 
   useEffect(() => {
