@@ -12,10 +12,10 @@ function PhotoHeadline({
   useEffect(() => {
     window.addEventListener('scroll', () => {
       const value = window.scrollY;
-      waveRef1.current.style.backgroundPositionX = `${400 + value * 4}px`;
-      waveRef2.current.style.backgroundPositionX = `${300 + value * -4}px`;
-      waveRef3.current.style.backgroundPositionX = `${200 + value * 2}px`;
-      waveRef4.current.style.backgroundPositionX = `${100 + value * -4}px`;
+      waveRef1.current.style.backgroundPositionX = `${400 + value * 2}px`;
+      waveRef2.current.style.backgroundPositionX = `${300 + value * -2}px`;
+      waveRef3.current.style.backgroundPositionX = `${200 + value * 1}px`;
+      waveRef4.current.style.backgroundPositionX = `${100 + value * -1}px`;
     });
   }, []);
 
