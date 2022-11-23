@@ -61,7 +61,7 @@ function App() {
     setSection2Progress((offset > section2.current.offsetTop - windowHeight) ? (Math.min(((offset - (section2.current.offsetTop - windowHeight)) / section2.current.offsetHeight) * 100, 100)) : 0);
     setSection3Progress((offset > section3.current.offsetTop - windowHeight) ? (Math.min(((offset - (section3.current.offsetTop - windowHeight)) / section3.current.offsetHeight) * 100, 100)) : 0);
     setSection4Progress((offset > section4.current.offsetTop - windowHeight) ? (Math.min(((offset - (section4.current.offsetTop - windowHeight)) / section4.current.offsetHeight) * 100, 100)) : 0);
-    setSection5Progress((offset > section5.current.offsetTop - windowHeight) ? (Math.min(((offset - (section3.current.offsetTop - windowHeight)) / section3.current.offsetHeight) * 100, 100)) : 0);
+    setSection5Progress((offset > section5.current.offsetTop - windowHeight) ? (Math.min(((offset - (section5.current.offsetTop - windowHeight)) / section5.current.offsetHeight) * 100, 100)) : 0);
   }, [offset]);
 
   useEffect(() => {

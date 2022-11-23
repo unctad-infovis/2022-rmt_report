@@ -386,12 +386,13 @@ body {
       flex-direction: column;
       margin: auto auto;
       max-width: @content_max_width;
+      position: relative;
       @media all and (max-width: 991px) {
         padding: 40% 0 20px 0;
         max-width: 600px;
       }
       @media all and (min-width: 992px) {
-        padding: 25% 0 20px 0;
+        padding: 5% 0 20% 0;
       }
       .photo_headlines {
         box-sizing: border-box;
@@ -428,6 +429,44 @@ body {
           }
         }
       }
+    }
+    .photo_headline_waves {
+      .wave {
+        bottom: 0;
+        height: 100px;
+        background-image: url('./../assets/img/2022-rmt_report_wave.png');
+        background-size: 1000px 100px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        animation: animate 4s ease-in-out infinite;
+        animation-delay: calc(car(--i) * 0.25s);
+        &.wave_1 {
+          background-position-x: 400px;
+          opacity: 1;
+          z-index: 1000;
+        }
+        &.wave_2 {
+          background-position-x: 300px;
+          opacity: 0.5;
+          z-index: 999;
+        }
+        &.wave_3 {
+          background-position-x: 200px;
+          opacity: 0.2;
+          z-index: 998;
+        }
+        &.wave_4 {
+          background-position-x: 100px;
+          opacity: 0.7;
+          z-index: 997;
+        }
+      }
+    }
+  }
+  @keyframes animate {
+    0% {
+      transform: translateY(0px);
     }
   }
 
