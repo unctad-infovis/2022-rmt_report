@@ -81,7 +81,7 @@ body {
       display: flex;
       flex-direction: column;
       height: 100vh;
-      justify-content: top;
+      justify-content: center;
       margin: auto auto;
       position: relative;
       h4 {
@@ -92,12 +92,13 @@ body {
           color: #fff;
           font-size: 46px;
           font-weight: 400;
-          left: 0;
           line-height: 46px;
+          overflow: hidden;
           padding: 10px 60px 10px 60px;
-          position: relative;
+          position: absolute;
           text-align: center;
           text-transform: uppercase;
+          top: 0;
           z-index: 2;
           @media all and (max-width: 767px) {
             font-size: 40px;
