@@ -21,9 +21,14 @@ function Figure01() {
       name: el.Name,
       zoneAxis: 'x',
       zones: [{
-        value: Date.UTC(2022, 0, 1)
+        value: Date.UTC(2021, 0, 1),
+        dashStyle: 'Solid'
       }, {
-        dashStyle: 'shortdot'
+        value: Date.UTC(2022, 0, 1),
+        dashStyle: 'ShortDash'
+      }, {
+        value: Date.UTC(2027, 0, 1),
+        dashStyle: 'ShortDot'
       }]
     });
   });

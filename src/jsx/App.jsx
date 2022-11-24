@@ -331,6 +331,20 @@ function App() {
         </div>
       </div>
       <Footer />
+      <svg>
+        <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+          <feTurbulence id="sea-filter" numOctaves="2" seed="1" baseFrequency="0.02 0.05" />
+          <feDisplacementMap scale="20" in="SourceGraphic" />
+          <animate
+            xlinkHref="#sea-filter"
+            attributeName="baseFrequency"
+            dur="60s"
+            keyTimes="0;0.5;1"
+            values="0.005 0.015;0.01 0.02;0.005 0.015"
+            repeatCount="indefinite"
+          />
+        </filter>
+      </svg>
       <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );

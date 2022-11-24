@@ -369,17 +369,27 @@ body {
     }
   }
   .photo_headline_container {
-    background-attachment: fixed;
-    background-blend-mode: darken;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     min-height: 100%;
+    overflow: hidden;
     position: relative;
-    @supports (-webkit-touch-callout: none) {
-      background-attachment: scroll;
-      background-position: center 0;
+    .bg {
+      background-attachment: fixed;
+      background-blend-mode: darken;
+      background-color: rgba(0, 0, 0, 0.5);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      // filter: url("#turbulence");
+      height: 100%;
+      min-height: 100%;
+      position: absolute;
+      // transform: scale(1.1);
+      width: 100%;
+      z-index: -1;
+      @supports (-webkit-touch-callout: none) {
+        background-attachment: scroll;
+        background-position: center 0;
+      }
     }
     .photo_headline_content {
       display: flex;

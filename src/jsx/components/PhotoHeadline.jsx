@@ -20,7 +20,8 @@ function PhotoHeadline({
   }, []);
 
   return (
-    <div className="photo_headline_container" style={{ backgroundImage: `url(${window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/' : './'}assets/img/${img})` }}>
+    <div className="photo_headline_container">
+      <div className="bg" style={{ backgroundImage: `url(${window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/' : './'}assets/img/${img})` }} />
       <div className="photo_headline_content">
         <div className="photo_headlines">
           <h2 className="" style={{ maxWidth: max_width }}>{text_upper}</h2>

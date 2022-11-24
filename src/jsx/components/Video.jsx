@@ -18,6 +18,7 @@ function Video({ anchorClick }) {
         if (videoRef.current.currentTime > 3) {
           document.querySelector('body').style.overflow = 'scroll';
           reportHeadline.current.classList.add('show');
+          document.querySelector('.arrows').classList.add('show');
           clearInterval(interval);
         }
       }, 100);
