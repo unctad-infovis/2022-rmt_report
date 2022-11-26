@@ -19,6 +19,8 @@ import Footer from './components/Footer.jsx';
 import Figure10 from './Figure10.jsx';
 import Figure07 from './Figure07.jsx';
 import Figure01 from './Figure01.jsx';
+import Figure022 from './Figure022.jsx';
+import Figure032 from './Figure032.jsx';
 
 // const appID = '#app-root-2022-rmt_report';
 
@@ -147,7 +149,7 @@ function App() {
             <IsVisible once>
               {(isVisible) => (
                 <p className="ingress">
-                  The UN Conference on Trade and Development (UNCTAD) in its flagship “Review of Maritime Transport 2022” has called for increased investment in maritime supply chains. Ports, shipping fleets and hinterland connections need to be better prepared for future global crises, climate change and the transition to low-carbon energy.
+                  COVID-19, the war in Ukraine, climate change and geopolitics have wreaked havoc on maritime transport and logistics, clogging some ports and closing others, reconfiguring routes, extending delays and pushing up shipping costs.
                   <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Highlight</span>
                 </p>
               )}
@@ -155,7 +157,23 @@ function App() {
             <IsVisible once>
               {(isVisible) => (
                 <p className="ingress">
-                  hips carry over 80% of the goods traded globally, with the percentage even higher for most developing countries, hence the urgent need to boost resilience to shocks that disrupt supply chains, fuel inflation and affect the poorest the most.
+                  Ships deliver over 80% of world trade, so disruptions in ports and on shipping lanes mean food, energy, medicine and other essential items don’t reach those in need. Businesses are left without the supplies. And prices for producers and consumers soar.
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Highlight</span>
+                </p>
+              )}
+            </IsVisible>
+            <IsVisible once>
+              {(isVisible) => (
+                <p className="ingress">
+                  Although delays have improved and rates have started to come down, maritime transport – and thus world trade – remains vulnerable. The industry must invest now to shore up its resilience to future crises and climate change.
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Highlight</span>
+                </p>
+              )}
+            </IsVisible>
+            <IsVisible once>
+              {(isVisible) => (
+                <p className="ingress">
+                  Ports, shipping companies and transport operators need to expand capacity, renew and expand fleets and equipment, ensure adequate and skilled labour, improve connectivity and performance, reduce emissions and safeguard competition to ensure maritime transport can weather the next storm.
                   <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Highlight</span>
                 </p>
               )}
@@ -163,54 +181,53 @@ function App() {
           </div>
         </div>
         <div className="right_column">
-          <Quote author_name="Rebeca Grynspan" author_title="UNCTAD Secretary-General" first_line="We must not delay the decarbonization of shipping" second_line="We need to learn from the current supply chain crisis and prepare better for future challenges and transitions. This includes enhancing intermodal infrastructure, fleet renewal and improving port performance and trade facilitation" />
+          <Quote author_name="Rebeca Grynspan" author_title="UNCTAD Secretary-General" first_line="We must change course and we must do it now" second_line="To prepare for the future, we need shipping and supply chains to be more efficient, more resilient, and far greener." />
         </div>
       </div>
       <div className="section_wrapper">
         <ProgressIndicator appRef={appRef} section1Progress={section1Progress} section2Progress={section2Progress} section3Progress={section3Progress} section4Progress={section4Progress} section5Progress={section5Progress} />
         {/* Section 1 */}
         <div ref={section1} className="section_1_container">
-          <PhotoHeadline img="2022-rmt_report_section-min.jpg" max_width={560} text_upper="Investment is needed in maritime" text_lower="transport systems to strengthen global supply chains" />
+          <PhotoHeadline img="2022-rmt_report_section_1-min.jpg" max_width={560} text_upper="World should prepare for unpredictable future" text_lower="with volatile shipping costs" />
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
-                <p>Logistics supply constraints combined with a surge in demand for consumer goods and e-commerce pushed container spot freight rates to five times their pre-pandemic levels in 2021, reaching a historical peak in early 2022 and sharply increasing consumer prices. The rates have dropped since mid-2022 but they remain high for oil and natural gas tanker cargo due to the ongoing energy crisis.</p>
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
+                      A surge in consumer spending – especially for goods ordered online – combined with supply chain disruptions and logistics constraints pushed container freight rates to five times their pre-pandemic levels in 2021. The surge in container shipping costs, which peaked in early 2022, sharply increased consumer prices for many goods.
                       <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Highlight</span>
                     </p>
                   )}
                 </IsVisible>
-                <p>Dry bulk freight rates increased due to the war in Ukraine and related economic measures, as well as the prolonged COVID-19 pandemic and supply chain disruptions. An UNCTAD simulation projects that higher grain prices and dry bulk freight rates can lead to a 1.2% increase in consumer food prices (Figure 7), with higher increases in middle- and low-income countries</p>
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
+                      Likewise, freight rates for dry bulk – unpackaged raw materials like grains – increased due to the war in Ukraine, the prolonged pandemic and supply chain crisis. An UNCTAD simulation projects that higher grain prices and dry bulk freight rates can lead to a 1.2% hike in consumer food prices, with higher increases in middle- and low-income countries.
                       <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Highlight</span>
                     </p>
                   )}
                 </IsVisible>
-                <p>“If there is one thing we have learned from the crisis of the last two years it is that ports and shipping greatly matter for a well-functioning global economy,” said Shamika N. Sirimanne, director of UNCTAD’s technology and logistics division. “Higher freight rates have led to surging consumer prices, especially for the most vulnerable. Interrupted supply chains led to lay-offs and food insecurity.”</p>
-                <p>UNCTAD calls on countries to carefully assess potential changes in shipping demand, develop and upgrade port infrastructure and hinterland connections while involving the private sector. They should also bolster port connectivity, expand storage and warehousing space and capabilities, minimize labour and equipment shortages.</p>
-                <p>Many supply chain disruptions can also be eased through trade facilitation, notably through digitalization, which cuts waiting and clearance times in ports and speeds up documentary processes through e-documents and electronic payments.</p>
+                <p>Although freight and charter rates have fallen since mid-2022, they are still above pre-COVID-19 levels. And rates remain high for oil and natural gas tanker cargo due to the ongoing energy crisis. In an increasingly unpredictable operating environment, future shipping costs will likely be higher and more volatile than in the past.</p>
               </div>
+              <Figure07 />
             </div>
             <div className="right_column">
-              <Figure10 />
-              <Recommendations headline="UNCTAD calls on" recommendation_list={['1', '2', '3']} />
+              <Figure032 />
+              <Recommendations headline="UNCTAD calls for" recommendation_list={['Governments and operators to expand and upgrade port infrastructure and land transport connections, and accelerate trade facilitation reforms, especially digitalization.', 'Port operators and shipping companies to invest in increasing storage facilities and reducing equipment shortages.', 'Shipping companies to invest in sustainable shipping and deploy the necessary ship-carrying capacity.']} />
             </div>
           </div>
         </div>
         {/* Section 2 */}
         <div ref={section2} className="section_2_container">
-          <PhotoHeadline img="2022-rmt_report_section-min.jpg" max_width={560} text_upper="More investment required to cut" text_lower="carbon footprint of maritime transport " />
+          <PhotoHeadline img="2022-rmt_report_section_2-min.jpg" max_width={560} text_upper="Urgent need to minimize risks" text_lower="and uncertainties to growth" />
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
-                      The report shows that between 2020 and 2021 total carbon emissions from the world maritime fleet increased by 4.7%, with most of the increases coming from container ships, dry bulk and general cargo vessels.
+                      Riding on the surge in demand for containerized cargo, world maritime trade bounced back in 2021. Shipments grew by an estimated 3.2% to reach 11 billion tons. This represents an improvement of 7 percentage points compared with the 3.8% decline in 2020.
                       <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Highlight</span>
                     </p>
                   )}
@@ -218,106 +235,103 @@ function App() {
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
-                      The report also raises concern over the increasing average age of ships. By number of ships, the current average age is 21.9 years, and by carrying capacity 11.5 years. Ships are ageing partly due to uncertainty about future technological developments and the most cost-efficient fuels, as well as about changing regulations and carbon prices.
+                      Growth was recorded in all developing regions. It increased by an estimated 5.6% in Africa, 3% in Latin America and the Caribbean and 3%in Asia, which remained the world’s leading maritime cargo handling centre, accounting for 42% of goods loaded and 64% of those unloaded in 2021. Read maritime transport figures for
+                      {' '}
+                      <a href="https://unctad.org/press-material/unctads-review-maritime-transport-2022-facts-and-figures-africa">Africa</a>
+                      ,
+                      {' '}
+                      <a href="https://unctad.org/press-material/unctads-review-maritime-transport-2022-facts-and-figures-asia-and-pacific">Asia</a>
+                      {' '}
+                      and
+                      {' '}
+                      <a href="https://unctad.org/press-material/unctads-review-maritime-transport-2022-facts-and-figures-latin-america-and-caribbean">Latin America and the Caribbean</a>
+                      .
                       <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Highlight</span>
                     </p>
                   )}
                 </IsVisible>
-                <p>Investments in new ships that reduce greenhouse gas emissions will be hampered by surging borrowing costs, a darkened economic outlook and regulatory uncertainties. </p>
-                <p>UNCTAD calls for more investment in technical and operational improvements to cut the carbon footprint of maritime transport. These include switching to alternative, low or zero-carbon fuels, optimizing operations, using on-shore electricity when in ports and equipping vessels with energy-efficient technology. </p>
-                <p>The report also calls for a predictable global regulatory framework for investing in decarbonization and increased support for developing countries in the energy transition. It further underlines the urgent need to adapt ports to the impacts of climate change, especially in the most vulnerable nations. </p>
-                <p>UNCTAD urges the international community to ensure countries that are most negatively affected by climate change – and have contributed the least to its causes – are not negatively affected by climate mitigation efforts in maritime transport.</p>
-              </div>
-            </div>
-            <div className="right_column">
-              <Figure07 />
-              <Recommendations headline="UNCTAD calls on" recommendation_list={['1', '2', '3']} />
-            </div>
-          </div>
-        </div>
-        {/* Section 3 */}
-        <div ref={section3} className="section_3_container">
-          <PhotoHeadline img="2022-rmt_report_section-min.jpg" max_width={560} text_upper="Measures to protect competition " text_lower="needed in the face of market consolidation" />
-          <div className="two_column_layout">
-            <div className="left_column">
-              <div className="text_container">
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      The report says the container shipping sector has been transformed by horizontal consolidation through mergers and acquisitions. Shipping carriers have also pursued vertical integration by investing in terminal operations and other logistics services.
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Highlight</span>
-                    </p>
-                  )}
-                </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
-                      Between 1996 and 2022, the top 20 carriers increased their share of container-carrying capacity from 48% to 91%. And over the past five years, the four largest carriers increased their market shares to control more than half of the global capacity (Figure 10).
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Highlight</span>
-                    </p>
-                  )}
-                </IsVisible>
-                <p>The number of companies that provide services to importers and exporters fell in 110 countries, notably in small island developing states, where at times a duopoly of just two carriers dropped to a monopoly of one.  </p>
-                <p>Market consolidation results in reduced competition, constrained supply, and can lead to market power abuse and higher rates and prices for consumers. </p>
-                <p>Ship oversizing also raises concern. Between 2006 and 2022, the size of the world’s largest container ships more than doubled from 9,380 twenty-foot equivalent unit (TEU) to 23,992 TEU. The size of the largest ship in each country almost tripled, thus ships grew faster than the volumes of cargo to fill them.  </p>
-                <p>
-                  UNCTAD calls on competition and port authorities to work together respond to industry consolidation with measures to protect competition. The report urges stronger international cooperation on cross-border, anticompetitive practices in maritime transport, based on the
-                  <a href="https://unctad.org/topic/competition-and-consumer-protection/the-united-nations-set-of-principles-on-competition">UN Set of Competition Rules and Principles</a>
-                  .
-                </p>
+                <p>But risks and uncertainty remain high. Globally, inflation and living costs are rising and could dampen consumer spending. A zero-COVID policy in China, the world’s largest exporter, could disrupt manufacturing. And the war in Ukraine continues to impact global food, energy and fertilizer markets.</p>
+                <p>UNCTAD projects global maritime trade will lose steam, with growth slowing to 1.4% in 2022. For the period 2023–2027, it is expected to grow at 2.1% annually – slower than the 3.3% average recorded during the past three decades.</p>
               </div>
             </div>
             <div className="right_column">
               <Figure01 />
-              <Recommendations headline="UNCTAD calls on" recommendation_list={['1', '2', '3']} />
             </div>
           </div>
+          <Recommendations headline="UNCTAD calls for" recommendation_list={['The international community to mitigate COVID-19’s impact by providing better access to vaccines and medicines in developing countries.', 'The international community to mitigate COVID-19’s impact by providing better access to vaccines and medicines in developing countries. ', 'Countries to promote economic growth, avoid austerity measures, while taming inflation and reducing financial vulnerability.']} />
+        </div>
+        {/* Section 3 */}
+        <div ref={section3} className="section_3_container">
+          <PhotoHeadline img="2022-rmt_report_section_3-min.jpg" max_width={580} text_upper="Industry should maintain a younger fleet" text_lower="and reduce emissions" />
+          <div className="two_column_layout">
+            <div className="left_column">
+              <div className="text_container">
+                <IsVisible once>
+                  {(isVisible) => (
+                    <p>
+                      Greenhouse gas emissions from the world’s maritime fleet are heading in the wrong direction. Between 2020 and 2021, they went up by 4.7%, with most of the increase coming from container ships, dry bulk carriers and general cargo vessels.
+                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Highlight</span>
+                    </p>
+                  )}
+                </IsVisible>
+                <p>Like emissions, the fleet’s average age is also rising – another concern for the environment since older ships pollute more. By number of ships, the current average age is 21.9 years, and by carrying capacity 11.5 years.  </p>
+                <p>Ships are getting older partly due to shipowners’ uncertainty about future technological developments and the most cost-efficient fuels, as well as about changing regulations and carbon prices. </p>
+                <p>The world needs a new generation of ships that can use the most cost-efficient fuels and integrate seamlessly with smart digital systems. But shipbuilding volumes remain low. The global commercial fleet grew by less than 3% in 2021 – the second lowest rate since 2005. </p>
+              </div>
+            </div>
+            <div className="right_column">
+              <Figure022 />
+            </div>
+          </div>
+          <Recommendations headline="UNCTAD calls for" recommendation_list={['More investment in energy-efficient shipping technologies and an accelerated shift to alternative, low-carbon fuels to cut the carbon footprint of maritime transport.', 'A predictable global regulatory framework for investing in decarbonization and increased support for developing countries in the energy transition.', 'Stronger support to help developing countries adapt ports to the impacts of climate change, especially in small island developing states.']} />
         </div>
         {/* Section 4 */}
         <div ref={section4} className="section_4_container">
-          <PhotoHeadline img="2022-rmt_report_section-min.jpg" max_width={560} text_upper="Global maritime" text_lower="trade expected to slow " />
+          <PhotoHeadline img="2022-rmt_report_section_4-min.jpg" max_width={560} text_upper="Countries should improve" text_lower="port performance and connectivity" />
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
-                      According to the report, international maritime trade bounced back significantly in 2021 with an estimated growth of 3.2% and overall shipments of 11 billion tons (Figure 1). This is an improvement of 7 percentage points compared to the 3.8% decline in 2020.
+                      The global economy picked up in 2021 and the world’s cargo-carrying ships made more port calls. The rebound continued in the first nine months of 2022 in all segments except container ships, which faced continuing congestion.
                       <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Highlight</span>
                     </p>
                   )}
                 </IsVisible>
-                <p>Africa’s maritime trade in 2021 increased by 5.6% over 2020.  </p>
-                <p>AFRICA MARITIME TRADE FIGURES  </p>
-                <p>Asia remained the world’s leading maritime cargo handling centre in 2021, accounting for 42% of exports and 64% imports.  </p>
-                <p>ASIA MARITIME TRADE FIGURES  </p>
-                <p>Latin America and the Caribbean saw a 3% increase in maritime trade in 2021.  </p>
-                <p>LATIN AMERICA AND THE CARIBBEAN MARITIME TRADE FIGURES  </p>
-                <p>For 2022, UNCTAD projects global maritime trade growth to moderate to 1.4%. And for the period 2023–2027, it is expected to expand at an annual average of 2.1%, a slower rate than the previous three-decade average of 3.3%.  </p>
-                <p>The report and its online annexes provide an extensive collection of statistics from maritime trade and an analysis of structural and cyclical changes affecting seaborne trade, ports and shipping.</p>
+                <p>The median turnaround time for container ships, which carry most of the world’s manufactured goods, increased by 13.7% between 2020 and 2021.</p>
+                <p>Globally, liner shipping connectivity has also suffered in all regions since the start of the supply chain crisis – but with variations between countries.</p>
+                <p>In the United States, for example, long-term underinvestment in West Coast port infrastructure weakened performance in handling containers. And countries in Africa and Latin America and the Caribbean lost more than 10% of direct shipping connections.</p>
+                <p>Meanwhile, India extended its regional connections by upgrading port capacity. And China, the world’s most connected country, widened its lead.</p>
+                <h4>Get the data on four key performance indicators</h4>
+                <ul>
+                  <li><a href="https://unctadstat.unctad.org/wds/TableViewer/tableView.aspx?ReportId=92">LSCI Liner Shipping Connectivity Index for all countries, container</a></li>
+                  <li><a href="https://unctadstat.unctad.org/wds/TableViewer/tableView.aspx?ReportId=194891">Time in port for top 25 countries, six different vessel types</a></li>
+                  <li><a href="https://unctadstat.unctad.org/wds/TableViewer/tableView.aspx?ReportId=170026">PLSCI Port Liner Shipping Connectivity Index for all ports, container</a></li>
+                  <li><a href="https://unctadstat.unctad.org/wds/TableViewer/tableView.aspx?ReportId=194890">Number of port calls for top 25 countries, eight different vessel types</a></li>
+                </ul>
               </div>
             </div>
             <div className="right_column">
-              <Recommendations headline="UNCTAD calls on" recommendation_list={['1', '2', '3']} />
+              GRAPHIC COMING
             </div>
           </div>
+          <Recommendations headline="UNCTAD calls for" recommendation_list={['Stronger support to help developing countries adopt smart maritime logistics and digital technologies, and implement measures to improve port, road and rail connections.', 'Developing countries to improve port performance and productivity, including by upgrading port capacity and strengthening regional transport connections.', 'Port authorities to reduce labour shortages by attracting more women workers and increasing female participation in the sector.  ']} />
         </div>
         {/* Section 5 */}
         <div ref={section5} className="section_5_container">
-          <PhotoHeadline img="2022-rmt_report_section-min.jpg" max_width={560} text_upper="Competition" text_lower="Monopoly" />
+          <PhotoHeadline img="2022-rmt_report_section_5-min.jpg" max_width={560} text_upper="Countries should protect competition" text_lower="and level the playing field" />
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
+                <p>Over the years, mergers and acquisitions have consolidated and transformed the container shipping sector, which carries most consumer goods. Carriers have also pursued vertical integration by investing in terminal operations and other logistics services.  </p>
+                <p>Over the last 25 years, the top 20 carriers have almost doubled their market share from 48% to 91%. And the four largest carriers now control more than half of the global container shipping capacity. </p>
+                <p>Consequently, the number of companies that provide services to importers and exporters have fallen in 110 countries, notably in small island developing states, where at times a duopoly of just two carriers dropped to a monopoly of one.  </p>
+                <p>Integration has given carriers and their alliances stronger negotiating and bargaining positions vis-à-vis port authorities, as they now have two seats at the table – as both tenants of terminals and providers of shipping services. </p>
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
-                      <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Highlight</span>
-                    </p>
-                  )}
-                </IsVisible>
-                <IsVisible once>
-                  {(isVisible) => (
-                    <p>
+                      Consolidation in the shipping market reduces competition and constrains supply. It can lead to market power abuse, higher shipping costs for businesses and thus higher prices for consumers.
                       <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Highlight</span>
                     </p>
                   )}
@@ -325,26 +339,13 @@ function App() {
               </div>
             </div>
             <div className="right_column">
-              <Recommendations headline="UNCTAD calls on" recommendation_list={['1', '2', '3']} />
+              <Figure10 />
             </div>
           </div>
+          <Recommendations headline="UNCTAD calls for" recommendation_list={['Competition and port authorities to work together to monitor freight rates and charges and respond to industry consolidation with measures to protect competition.', 'Stronger international cooperation on cross-border, anticompetitive practices in maritime transport, based on the UN Set of Competition Rules and Principles.', 'Governments to monitor trends in maritime industry structures and services to ensure level playing fields, especially for smaller shippers in developing countries.']} />
         </div>
       </div>
       <Footer />
-      <svg>
-        <filter id="turbulence" x="0" y="0" width="100%" height="100%">
-          <feTurbulence id="sea-filter" numOctaves="2" seed="1" baseFrequency="0.02 0.05" />
-          <feDisplacementMap scale="20" in="SourceGraphic" />
-          <animate
-            xlinkHref="#sea-filter"
-            attributeName="baseFrequency"
-            dur="60s"
-            keyTimes="0;0.5;1"
-            values="0.005 0.015;0.01 0.02;0.005 0.015"
-            repeatCount="indefinite"
-          />
-        </filter>
-      </svg>
       <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );

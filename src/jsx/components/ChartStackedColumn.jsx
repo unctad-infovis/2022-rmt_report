@@ -50,7 +50,7 @@ function ColumnChart({
 }) {
   const chartRef = useRef();
 
-  const chartHeight = 600;
+  const chartHeight = 650;
   const isVisible = useIsVisible(chartRef, { once: true });
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {

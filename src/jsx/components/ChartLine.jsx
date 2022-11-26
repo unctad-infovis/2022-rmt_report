@@ -1,5 +1,5 @@
 import React, {
-  useEffect, useCallback, useRef, memo
+  useEffect, useCallback, useRef, useMemo, memo
 } from 'react';
 import PropTypes from 'prop-types';
 
@@ -47,12 +47,13 @@ Highcharts.SVGRenderer.prototype.symbols.download = (x, y, w, h) => {
 };
 
 function LineChart({
-  allow_decimals, change, data, data_decimals, idx, line_width, note, plot_lines, show_only_first_and_last_labels, source, subtitle, suffix, title, ymax, ymin, ytick_interval
+  allow_decimals, change, chart_height, data, data_decimals, idx, line_width, note, plot_lines, show_only_first_and_last_labels, source, subtitle, suffix, title, tooltip_date_interval, tooltip_label, ymax, ymin, ytick_interval
 }) {
   const chartRef = useRef();
   const isVisible = useIsVisible(chartRef, { once: true });
 
-  const chartHeight = 600;
+  const month_names = useMemo(() => ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], []);
+
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
       caption: {
@@ -91,7 +92,7 @@ function LineChart({
             }
           }
         },
-        height: chartHeight,
+        height: chart_height,
         resetZoomButton: {
           theme: {
             fill: '#fff',
@@ -161,7 +162,7 @@ function LineChart({
             enabled: false,
             formatter() {
               // eslint-disable-next-line react/no-this-in-sfc
-              return `<span style="color: ${this.color}">${roundNr(this.y, 0).toLocaleString('en-US')}%</div>`;
+              return `<span style="color: ${this.color}">${roundNr(this.y, data_decimals).toLocaleString('en-US')}${suffix}</div>`;
             },
             style: {
               color: 'rgba(0, 0, 0, 0.8)',
@@ -217,7 +218,7 @@ function LineChart({
         }, {
           chartOptions: {
             chart: {
-              height: 700
+              height: chart_height
             },
             legend: {
               layout: 'horizontal'
@@ -236,7 +237,7 @@ function LineChart({
         }, {
           chartOptions: {
             chart: {
-              height: 800
+              height: chart_height
             }
           },
           condition: {
@@ -283,7 +284,7 @@ function LineChart({
           const rows = [];
           rows.push(values.map(point => `<div><span class="tooltip_label" style="color: ${point[2]}">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${formatNr(roundNr(point[1], data_decimals), ',', suffix, '', false, change)}</span></div>`).join(''));
           // eslint-disable-next-line react/no-this-in-sfc
-          return `<div class="tooltip_container"><h3 class="tooltip_header">Year ${(new Date(this.x)).getFullYear()}</h3>${rows}</div>`;
+          return `<div class="tooltip_container"><h3 class="tooltip_header">${tooltip_label} ${tooltip_date_interval === 'day' ? (`${(new Date(this.x)).getDate()} ${month_names[(new Date(this.x)).getMonth()]} ${(new Date(this.x)).getFullYear()}`) : (new Date(this.x)).getFullYear()}</h3>${rows}</div>`;
         },
         shadow: false,
         shared: true,
@@ -368,7 +369,7 @@ function LineChart({
       }
     });
     chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
-  }, [allow_decimals, change, data, data_decimals, idx, line_width, note, plot_lines, show_only_first_and_last_labels, source, subtitle, suffix, title, ymax, ymin, ytick_interval]);
+  }, [allow_decimals, change, chart_height, data, data_decimals, idx, line_width, month_names, note, plot_lines, show_only_first_and_last_labels, source, subtitle, suffix, title, tooltip_date_interval, tooltip_label, ymax, ymin, ytick_interval]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -392,6 +393,7 @@ LineChart.propTypes = {
   allow_decimals: PropTypes.bool,
   change: PropTypes.bool,
   data: PropTypes.instanceOf(Array).isRequired,
+  chart_height: PropTypes.number,
   data_decimals: PropTypes.number.isRequired,
   idx: PropTypes.string.isRequired,
   line_width: PropTypes.number,
@@ -402,6 +404,8 @@ LineChart.propTypes = {
   subtitle: PropTypes.string,
   suffix: PropTypes.string,
   title: PropTypes.string.isRequired,
+  tooltip_date_interval: PropTypes.string,
+  tooltip_label: PropTypes.string,
   ymax: PropTypes.number,
   ymin: PropTypes.number,
   ytick_interval: PropTypes.number
@@ -410,12 +414,15 @@ LineChart.propTypes = {
 LineChart.defaultProps = {
   allow_decimals: true,
   change: false,
+  chart_height: 600,
   line_width: 5,
   note: false,
   plot_lines: [{}],
   show_only_first_and_last_labels: true,
   subtitle: false,
   suffix: '',
+  tooltip_date_interval: 'year',
+  tooltip_label: 'Year',
   ymax: undefined,
   ymin: undefined,
   ytick_interval: undefined

@@ -99,7 +99,7 @@ function Figure01() {
         }]}
         source="UNCTAD secretariat, based on UNCTADstat data and Review of Maritime Transport, various issues."
         subtitle="International maritime trade, percentage annual change"
-        line_width={3}
+        line_width={4}
         show_only_first_and_last_labels={false}
         suffix="%"
         title="Maritime trade recovered in 2021 but is projected to slow down"
