@@ -7,13 +7,13 @@ import { transpose } from 'csv-transpose';
 import CSVtoJSON from './helpers/CSVtoJSON.js';
 import ChartLine from './components/ChartLine.jsx';
 
-function Figure032() {
+function Figure0431() {
   // Data states.
   const [dataFigure, setDataFigure] = useState(false);
 
   const cleanData = (data) => data.map((el) => {
     const labels = Object.keys(el).filter(val => val !== 'Name').map(val => Date.UTC(parseInt(val.split('-')[0], 10), (parseInt(val.split('-')[1], 10) - 1), parseInt(val.split('-')[2], 10)));
-    const values = Object.values(el).map(val => (parseFloat(val))).filter(val => !Number.isNaN(val));
+    const values = Object.values(el).map(val => (parseFloat(val) / 1000000)).filter(val => !Number.isNaN(val));
 
     return ({
       data: values.map((e, j) => ({
@@ -25,7 +25,7 @@ function Figure032() {
   });
 
   useEffect(() => {
-    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-rmt_report/' : './'}assets/data/2022-rmt_report_figure_032.csv`;
+    const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-rmt_report/' : './'}assets/data/2022-rmt_report_figure_0431.csv`;
     try {
       fetch(data_file)
         .then((response) => {
@@ -45,25 +45,25 @@ function Figure032() {
       {dataFigure && (
       <ChartLine
         data={dataFigure}
-        data_decimals={1}
-        idx="032"
+        data_decimals={0}
+        idx="0431"
         line_width={4}
-        note=""
-        show_only_first_and_last_labels={false}
-        source="UNCTAD, based on data from Clarksons Shippping Intelligence Network."
-        subtitle="SCFI comprehensive container freight rate index, US dollars container per shipment, Jan 2018 – Nov 2022"
+        note="CO2 emissions from vessels spesific calculated bunker fuel from AIS."
+        show_only_first_and_last_labels
+        source="UNCTAD, based on data provided by Marine Benchmark."
+        subtitle="Total CO2 emissions of world fleet, annualized monthly, January 2012 – April 2022, million tons"
+        tooltip_date_interval="month"
         suffix=""
-        title="After rapid rise the prices of shipping are declining"
-        tooltip_date_interval="day"
+        title="Overall CO2 emissions from vessels are rising"
         tooltip_label=""
         ylabel=""
-        ymax={5500}
-        ymin={0}
-        ytick_interval={1000}
+        ymax={900}
+        ymin={400}
+        ytick_interval={100}
       />
       )}
     </div>
   );
 }
 
-export default memo(Figure032);
+export default memo(Figure0431);

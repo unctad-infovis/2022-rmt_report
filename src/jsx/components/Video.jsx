@@ -50,6 +50,9 @@ function Video({ anchorClick }) {
           <div>Navigating</div>
           <div>stormy waters</div>
         </h4>
+        <h4 className="unctad_logo">
+          <img src="https://unctad.org/sites/default/files/2022-11/unctad_logo_white.svg" alt="UNCTAD logo" />
+        </h4>
       </div>
       <div className="video_headline_wrapper" />
       <video autoPlay muted playsInline ref={videoRef} poster="">

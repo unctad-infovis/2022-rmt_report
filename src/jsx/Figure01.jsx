@@ -71,8 +71,8 @@ function Figure01() {
             },
             rotation: 0,
             verticalAlign: 'bottom',
-            text: 'Global financial crisis',
-            y: -5
+            text: 'Financial crisis',
+            y: -10
           },
           zIndex: 4,
           value: Date.UTC(2009, 0, 1),
@@ -91,7 +91,7 @@ function Figure01() {
             rotation: 0,
             verticalAlign: 'bottom',
             text: 'COVID-19',
-            y: -5
+            y: -10
           },
           zIndex: 4,
           value: Date.UTC(2020, 0, 1),

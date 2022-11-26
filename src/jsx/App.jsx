@@ -16,11 +16,12 @@ import PhotoHeadline from './components/PhotoHeadline.jsx';
 import Recommendations from './components/Recommendations.jsx';
 import Footer from './components/Footer.jsx';
 
-import Figure10 from './Figure10.jsx';
-import Figure07 from './Figure07.jsx';
 import Figure01 from './Figure01.jsx';
 import Figure022 from './Figure022.jsx';
 import Figure032 from './Figure032.jsx';
+import Figure0431 from './Figure0431.jsx';
+import Figure07 from './Figure07.jsx';
+import Figure10 from './Figure10.jsx';
 
 // const appID = '#app-root-2022-rmt_report';
 
@@ -277,13 +278,14 @@ function App() {
                 <p>Like emissions, the fleet’s average age is also rising – another concern for the environment since older ships pollute more. By number of ships, the current average age is 21.9 years, and by carrying capacity 11.5 years.  </p>
                 <p>Ships are getting older partly due to shipowners’ uncertainty about future technological developments and the most cost-efficient fuels, as well as about changing regulations and carbon prices. </p>
                 <p>The world needs a new generation of ships that can use the most cost-efficient fuels and integrate seamlessly with smart digital systems. But shipbuilding volumes remain low. The global commercial fleet grew by less than 3% in 2021 – the second lowest rate since 2005. </p>
+                <Figure0431 />
               </div>
             </div>
             <div className="right_column">
               <Figure022 />
+              <Recommendations headline="UNCTAD calls for" recommendation_list={['More investment in energy-efficient shipping technologies and an accelerated shift to alternative, low-carbon fuels to cut the carbon footprint of maritime transport.', 'A predictable global regulatory framework for investing in decarbonization and increased support for developing countries in the energy transition.', 'Stronger support to help developing countries adapt ports to the impacts of climate change, especially in small island developing states.']} />
             </div>
           </div>
-          <Recommendations headline="UNCTAD calls for" recommendation_list={['More investment in energy-efficient shipping technologies and an accelerated shift to alternative, low-carbon fuels to cut the carbon footprint of maritime transport.', 'A predictable global regulatory framework for investing in decarbonization and increased support for developing countries in the energy transition.', 'Stronger support to help developing countries adapt ports to the impacts of climate change, especially in small island developing states.']} />
         </div>
         {/* Section 4 */}
         <div ref={section4} className="section_4_container">

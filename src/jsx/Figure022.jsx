@@ -55,7 +55,7 @@ function Figure022() {
         title="Average age of vessels was in decline but is now growing slowly"
         ylabel=""
         ymax={25}
-        ymin={10}
+        ymin={15}
         ytick_interval={5}
       />
       )}

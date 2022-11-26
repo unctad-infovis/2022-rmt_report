@@ -284,7 +284,7 @@ function LineChart({
           const rows = [];
           rows.push(values.map(point => `<div><span class="tooltip_label" style="color: ${point[2]}">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${formatNr(roundNr(point[1], data_decimals), ',', suffix, '', false, change)}</span></div>`).join(''));
           // eslint-disable-next-line react/no-this-in-sfc
-          return `<div class="tooltip_container"><h3 class="tooltip_header">${tooltip_label} ${tooltip_date_interval === 'day' ? (`${(new Date(this.x)).getDate()} ${month_names[(new Date(this.x)).getMonth()]} ${(new Date(this.x)).getFullYear()}`) : (new Date(this.x)).getFullYear()}</h3>${rows}</div>`;
+          return `<div class="tooltip_container"><h3 class="tooltip_header">${tooltip_label} ${tooltip_date_interval === 'day' ? (`${(new Date(this.x)).getDate()} ${month_names[(new Date(this.x)).getMonth()]} ${(new Date(this.x)).getFullYear()}`) : (tooltip_date_interval === 'month') ? (`${month_names[(new Date(this.x)).getMonth()]} ${(new Date(this.x)).getFullYear()}`) : (new Date(this.x)).getFullYear()}</h3>${rows}</div>`;
         },
         shadow: false,
         shared: true,
