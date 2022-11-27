@@ -223,10 +223,7 @@ function BarChart({
           width: 1
         },
         labels: {
-          formatter: (el) => {
-            console.log(el);
-            return ((el.value === 'World') ? `<strong>${el.value}</strong>` : el.value);
-          },
+          formatter: (el) => ((el.value === 'World') ? `<strong>${el.value}</strong>` : el.value),
           rotation: 0,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
