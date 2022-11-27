@@ -17,8 +17,10 @@ import Recommendations from './components/Recommendations.jsx';
 import Footer from './components/Footer.jsx';
 
 import Figure01 from './Figure01.jsx';
+import Figure02 from './Figure02.jsx';
 import Figure022 from './Figure022.jsx';
 import Figure032 from './Figure032.jsx';
+import Figure041 from './Figure041.jsx';
 import Figure0431 from './Figure0431.jsx';
 import Figure07 from './Figure07.jsx';
 import Figure10 from './Figure10.jsx';
@@ -305,6 +307,13 @@ function App() {
                 <p>Globally, liner shipping connectivity has also suffered in all regions since the start of the supply chain crisis – but with variations between countries.</p>
                 <p>In the United States, for example, long-term underinvestment in West Coast port infrastructure weakened performance in handling containers. And countries in Africa and Latin America and the Caribbean lost more than 10% of direct shipping connections.</p>
                 <p>Meanwhile, India extended its regional connections by upgrading port capacity. And China, the world’s most connected country, widened its lead.</p>
+                <Figure041 />
+              </div>
+            </div>
+            <div className="right_column">
+              <Figure02 />
+              <Recommendations headline="UNCTAD calls for" recommendation_list={['Stronger support to help developing countries adopt smart maritime logistics and digital technologies, and implement measures to improve port, road and rail connections.', 'Developing countries to improve port performance and productivity, including by upgrading port capacity and strengthening regional transport connections.', 'Port authorities to reduce labour shortages by attracting more women workers and increasing female participation in the sector.  ']} />
+              <div className="text_container">
                 <h4>Get the data on four key performance indicators</h4>
                 <ul>
                   <li><a href="https://unctadstat.unctad.org/wds/TableViewer/tableView.aspx?ReportId=92">LSCI Liner Shipping Connectivity Index for all countries, container</a></li>
@@ -314,11 +323,7 @@ function App() {
                 </ul>
               </div>
             </div>
-            <div className="right_column">
-              GRAPHIC COMING
-            </div>
           </div>
-          <Recommendations headline="UNCTAD calls for" recommendation_list={['Stronger support to help developing countries adopt smart maritime logistics and digital technologies, and implement measures to improve port, road and rail connections.', 'Developing countries to improve port performance and productivity, including by upgrading port capacity and strengthening regional transport connections.', 'Port authorities to reduce labour shortages by attracting more women workers and increasing female participation in the sector.  ']} />
         </div>
         {/* Section 5 */}
         <div ref={section5} className="section_5_container">
