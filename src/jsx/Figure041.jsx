@@ -10,11 +10,18 @@ function Figure041() {
   // Data states.
   const [dataFigure, setDataFigure] = useState(false);
 
-  const cleanData = (data) => data.map(el => ({
-    data: Object.values(el).map(val => parseFloat(val) * 24).filter(val => !Number.isNaN(val)),
-    labels: Object.keys(el).filter(val => val !== 'Name'),
-    name: el.Name
-  }));
+  const cleanData = (data) => data.map(el => {
+    const labels = Object.keys(el).filter(val => val !== 'Name');
+    const values = Object.values(el).map(val => parseFloat(val) * 24).filter(val => !Number.isNaN(val));
+    return {
+      data: values.map((e, j) => ({
+        color: (labels[j] === 'World') ? '#004987' : '#009edb',
+        name: labels[j],
+        y: e,
+      })),
+      name: el.Name
+    };
+  });
 
   useEffect(() => {
     const data_file = `${(window.location.href.includes('unctad.org')) ? 'https://storage.unctad.org/2022-rmt_report/' : './'}assets/data/2022-rmt_report_figure_041.csv`;
@@ -41,7 +48,7 @@ function Figure041() {
         idx="041"
         note="Ships of 1,000GT and above."
         source="UNCTAD, based on data provided by MarineTraffic"
-        subtitle="Media time in port in hours, S1 2022, container ships"
+        subtitle="Median time in port in hours, S1 2022, container ships"
         title="There is a big variaty in port performance"
         ylabel="Hours"
         xlabelrotation={0}

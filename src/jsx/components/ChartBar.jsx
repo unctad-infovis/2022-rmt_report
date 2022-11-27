@@ -1,4 +1,6 @@
-import React, { useEffect, useCallback, useRef } from 'react';
+import React, {
+  useEffect, useCallback, useRef, memo
+} from 'react';
 import PropTypes from 'prop-types';
 
 // https://www.npmjs.com/package/react-is-visible
@@ -100,7 +102,7 @@ function BarChart({
         type: 'bar',
         zoomType: 'x'
       },
-      colors: ['#009edb', '#72bf44', '#a066aa', '#f58220'],
+      // colors: ['#009edb'],
       credits: {
         enabled: false
       },
@@ -221,7 +223,10 @@ function BarChart({
           width: 1
         },
         labels: {
-          formatter: (el) => ((el.value === 'World') ? `<strong>${el.value}</strong>` : el.value),
+          formatter: (el) => {
+            console.log(el);
+            return ((el.value === 'World') ? `<strong>${el.value}</strong>` : el.value);
+          },
           rotation: 0,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
@@ -247,7 +252,8 @@ function BarChart({
             fontWeight: 400
           },
           text: xlabel
-        }
+        },
+        type: 'category'
       },
       yAxis: {
         accessibility: {
@@ -346,4 +352,4 @@ BarChart.defaultProps = {
   ymin: undefined
 };
 
-export default BarChart;
+export default memo(BarChart);
