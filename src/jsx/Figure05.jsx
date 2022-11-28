@@ -48,15 +48,15 @@ function Figure05() {
         data_decimals={1}
         idx="05"
         note=""
-        prefix="-"
+        prefix=""
         source="UNCTAD, based on data provided by MDS Transmodal."
         subtitle="Changes in number of direct calls by region, third quarter 2020–second quarter 2022, per cent"
         title="Port traffic fell in all regions, but some suffered more"
         xlabelrotation={0}
         ylabel="Change"
         ytick_interval={4}
-        ymax={16}
-        ymin={0}
+        ymax={0}
+        ymin={-16}
       />
       )}
     </div>

@@ -48,7 +48,7 @@ function Figure0431() {
         data_decimals={0}
         idx="0431"
         line_width={4}
-        note="CO2 emissions from vessels spesific calculated bunker fuel from AIS."
+        note="CO2 emissions from vessels specific calculated bunker fuel from AIS."
         show_only_first_and_last_labels
         source="UNCTAD, based on data provided by Marine Benchmark"
         subtitle="Total CO2 emissions of world’s merchant fleet, annualized monthly, January 2012 – April 2022, million tons"

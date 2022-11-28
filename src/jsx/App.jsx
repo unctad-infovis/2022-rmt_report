@@ -271,7 +271,7 @@ function App() {
         </div>
         {/* Section 3 */}
         <div ref={section3} className="section_3_container">
-          <PhotoHeadline img="2022-rmt_report_section_3-min.jpg" max_width={580} text_upper="Industry should maintain a younger fleet" text_lower="and reduce emissions" />
+          <PhotoHeadline img="2022-rmt_report_section_3-min.jpg" max_width={580} text_upper="Industry should reduce fleet’s emissions" text_lower="and invest in new ships" />
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
