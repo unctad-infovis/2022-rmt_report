@@ -51,10 +51,10 @@ function Figure0431() {
         note="CO2 emissions from vessels spesific calculated bunker fuel from AIS."
         show_only_first_and_last_labels
         source="UNCTAD, based on data provided by Marine Benchmark"
-        subtitle="Total CO2 emissions of world fleet, annualized monthly, January 2012 – April 2022, million tons"
+        subtitle="Total CO2 emissions of world’s merchant fleet, annualized monthly, January 2012 – April 2022, million tons"
         tooltip_date_interval="month"
         suffix=""
-        title="Overall CO2 emissions from vessels are rising"
+        title="World fleet’s CO2 emissions heading in the wrong direction"
         tooltip_label=""
         ylabel=""
         ymax={900}

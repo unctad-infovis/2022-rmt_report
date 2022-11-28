@@ -54,12 +54,32 @@ function Figure02() {
         data_decimals={0}
         idx="02"
         line_width={4}
-        note="Ships of 1,000 GT and above, not including passenger ships and Ro/Ro vessels."
+        plot_lines={[{
+          color: '#aaa096',
+          label: {
+            align: 'center',
+            style: {
+              color: 'rgba(0, 0, 0, 0.8)',
+              fontFamily: 'Roboto',
+              fontSize: '16px',
+              fontWeight: 700,
+              textOutline: '2px solid #fff'
+            },
+            rotation: 0,
+            verticalAlign: 'bottom',
+            text: 'COVID-19',
+            y: -10
+          },
+          zIndex: 4,
+          value: Date.UTC(2020, 0, 1),
+          width: 0
+        }]}
+        note="Ships of 1,000 GT and above, not including passenger ships and roll-on/roll-off vessels."
         show_only_first_and_last_labels
         source="UNCTAD, based on data provided by MarineTraffic."
-        subtitle="Port calls per half year, world total, First semester 2019–first semester 2022"
+        subtitle="Port calls per half year, world total, first semester 2019–first semester 2022"
         suffix=""
-        title="Port calls have bounced back after COVID-19 decline"
+        title="The roller-coaster of global port traffic"
         ylabel="Year"
         tooltip_date_interval="semester"
         tooltip_label=""

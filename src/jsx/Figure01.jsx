@@ -102,7 +102,7 @@ function Figure01() {
         line_width={4}
         show_only_first_and_last_labels={false}
         suffix="%"
-        title="Maritime trade recovered in 2021 but is projected to slow down"
+        title="Maritime trade’s COVID-19 recovery expected to lose steam"
         ylabel=""
         ymax={10}
         ymin={-6}

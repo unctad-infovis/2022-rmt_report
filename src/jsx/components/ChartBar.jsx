@@ -46,11 +46,10 @@ Highcharts.SVGRenderer.prototype.symbols.download = (x, y, w, h) => {
 };
 
 function BarChart({
-  data, data_decimals, idx, labels_inside, note, source, subtitle, title, xlabel, ylabel, ymax, ymin
+  chart_height, data, data_decimals, idx, labels_inside, note, prefix, source, subtitle, title, xlabel, ylabel, ytick_interval, ymax, ymin
 }) {
   const chartRef = useRef();
 
-  const chartHeight = 800;
   const isVisible = useIsVisible(chartRef, { once: true });
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
@@ -66,7 +65,7 @@ function BarChart({
         x: 0
       },
       chart: {
-        height: chartHeight,
+        height: chart_height,
         events: {
           load() {
             // eslint-disable-next-line react/no-this-in-sfc
@@ -167,7 +166,7 @@ function BarChart({
           const rows = [];
           rows.push(values.map(point => `<div style="color: ${point[2]}"><span class="tooltip_label">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${roundNr(point[1], data_decimals)}</span></div>`).join(''));
           // eslint-disable-next-line react/no-this-in-sfc
-          return `<div class="tooltip_container"><h3 class="tooltip_header">${xlabel} ${this.x}</h3>${rows}</div>`;
+          return `<div class="tooltip_container"><h3 class="tooltip_header">${xlabel} ${prefix}${this.x}</h3>${rows}</div>`;
         },
         shadow: false,
         shared: true,
@@ -186,7 +185,7 @@ function BarChart({
             enabled: true,
             formatter() {
               // eslint-disable-next-line react/no-this-in-sfc
-              return `${roundNr(this.y, data_decimals).toFixed(data_decimals)}`;
+              return `${prefix}${roundNr(this.y, data_decimals).toFixed(data_decimals)}`;
             },
             step: 2,
             color: (labels_inside) ? '#fff' : 'rgba(0, 0, 0, 0.8)',
@@ -264,6 +263,7 @@ function BarChart({
         gridLineWidth: 1,
         gridLineDashStyle: 'shortdot',
         labels: {
+          formatter: (el) => (`${prefix}${el.value}`),
           rotation: 0,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
@@ -286,7 +286,7 @@ function BarChart({
         }],
         showFirstLabel: true,
         showLastLabel: true,
-        tickInterval: 4,
+        tickInterval: ytick_interval,
         title: {
           enabled: true,
           reserveSpace: true,
@@ -304,7 +304,7 @@ function BarChart({
       }
     });
     chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
-  }, [data, data_decimals, idx, labels_inside, note, source, subtitle, title, xlabel, ylabel, ymax, ymin]);
+  }, [chart_height, data, data_decimals, idx, labels_inside, note, prefix, source, subtitle, title, xlabel, ylabel, ytick_interval, ymax, ymin]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -315,7 +315,7 @@ function BarChart({
   }, [createChart, isVisible]);
 
   return (
-    <div className="chart_container" style={{ minHeight: chartHeight }}>
+    <div className="chart_container" style={{ minHeight: chart_height }}>
       <div ref={chartRef}>
         {(isVisible) && (<div className="chart" id={`chartIdx${idx}`} />)}
       </div>
@@ -325,26 +325,32 @@ function BarChart({
 }
 
 BarChart.propTypes = {
+  chart_height: PropTypes.number,
   data: PropTypes.instanceOf(Array).isRequired,
   data_decimals: PropTypes.number.isRequired,
   idx: PropTypes.string.isRequired,
   labels_inside: PropTypes.bool,
   note: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  prefix: PropTypes.string,
   source: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   title: PropTypes.string.isRequired,
   xlabel: PropTypes.string,
   ylabel: PropTypes.string,
+  ytick_interval: PropTypes.number,
   ymax: PropTypes.number,
   ymin: PropTypes.number
 };
 
 BarChart.defaultProps = {
+  chart_height: 800,
   labels_inside: false,
   note: false,
+  prefix: '',
   subtitle: false,
   xlabel: '',
   ylabel: '',
+  ytick_interval: undefined,
   ymax: undefined,
   ymin: undefined
 };

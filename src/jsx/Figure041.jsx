@@ -48,11 +48,11 @@ function Figure041() {
         idx="041"
         note="Ships of 1,000GT and above."
         source="UNCTAD, based on data provided by MarineTraffic"
-        subtitle="Median time in port in hours, S1 2022, container ships"
-        title="There is a big variaty in port performance"
-        ylabel="Hours"
+        subtitle="Median time in port in hours, first semester 2022, container ships"
+        title="Port performance: Big differences among top countries"
+        ylabel="Hours in port"
         xlabelrotation={0}
-        ymax={48}
+        ymax={50}
         ymin={0}
       />
       )}

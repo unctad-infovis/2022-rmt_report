@@ -43,7 +43,7 @@ function Figure07() {
         source="UNCTAD calculations based on data provided by Clarksons Research, Shipping Intelligence Network, the IMF, International Financial Statistics, Direction of Trade Statistics and Consumer Price Index, UNCTADstat, and the World Bank, World Integrated Trade Solution, Commodity Price Data (The Pink Sheet) and A Global Database of Inflation."
         subtitle="Impact of higher dry bulk freight rates and global grain prices on consumer food prices, percentage change"
         suffix="%"
-        title="Higher dry bulk freight rates and grain prices affect countries differently"
+        title="Higher freight rates and grain prices hit countries differently"
         xlabelrotation={0}
         ymax={1.6}
         ymin={0}

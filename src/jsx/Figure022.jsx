@@ -52,7 +52,7 @@ function Figure022() {
         source="UNCTAD calculations, based on data from Clarksons Research."
         subtitle="Average age of merchant fleet, 2011–2022"
         suffix=" years"
-        title="Average age of vessels was in decline but is now growing slowly"
+        title="The world’s shipping fleet is ageing"
         ylabel=""
         ymax={25}
         ymin={15}

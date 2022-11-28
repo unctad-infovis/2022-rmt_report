@@ -82,6 +82,7 @@ module.exports = {
         { from: 'assets/data/Figure 3.2 - data.csv', to: '../public/assets/data/2022-rmt_report_figure_032.csv', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
         { from: 'assets/data/Figure 4.1 - data.csv', to: '../public/assets/data/2022-rmt_report_figure_041.csv', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
         { from: 'assets/data/Figure 4.31 - data.csv', to: '../public/assets/data/2022-rmt_report_figure_0431.csv', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
+        { from: 'assets/data/Figure 5 - data.csv', to: '../public/assets/data/2022-rmt_report_figure_05.csv', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
         { from: 'src/font/', to: '../public/font/', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }},
         { from: './favicon.png', to: '../public', noErrorOnMissing: true, globOptions: { dot: true, gitignore: true, ignore: ['**/.DS_Store'] }}
       ]

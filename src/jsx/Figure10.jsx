@@ -49,7 +49,7 @@ function Figure10() {
         source="UNCTAD, based on data provided by Alphaliner."
         subtitle="Market shares of top four and top ten carriers, 2012–2022"
         suffix="%"
-        title="Market shares of top carriers have increased steeply"
+        title="The growing market power of top carriers"
         ylabel=""
         ymax={100}
         ymin={0}
