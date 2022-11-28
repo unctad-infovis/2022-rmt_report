@@ -58,7 +58,7 @@ function Figure0431() {
         tooltip_label=""
         ylabel=""
         ymax={900}
-        ymin={500}
+        ymin={600}
         ytick_interval={100}
       />
       )}

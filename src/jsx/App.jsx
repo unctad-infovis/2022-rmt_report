@@ -158,13 +158,19 @@ function App() {
                 <p className="ingress">
                   Ships deliver over 80% of world trade, so disruptions in ports and on shipping lanes mean food, energy, medicine and other essential items don’t reach those in need.
                   {' '}
-                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Businesses are left without supplies.</span>
-                  {' '}
-                  And prices for producers and consumers soar.
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>Businesses are left without supplies. And prices for producers and consumers soar.</span>
                 </p>
               )}
             </IsVisible>
-            <p className="ingress">Although delays have improved and dry cargo rates are coming down, maritime transport – and thus world trade – remains vulnerable. The industry must invest now to shore up its resilience to future crises and climate change.</p>
+            <IsVisible once>
+              {(isVisible) => (
+                <p className="ingress">
+                  Although delays have improved and dry cargo rates are coming down, maritime transport – and thus world trade – remains vulnerable.
+                  {' '}
+                  <span className={`highlight ${(isVisible) ? 'visible' : ''}`}>The industry must invest now to shore up its resilience to future crises and climate change.</span>
+                </p>
+              )}
+            </IsVisible>
             <p className="ingress">Ports, shipping companies and transport operators need to expand capacity, renew and expand fleets and equipment, ensure adequate and skilled labour, improve connectivity and performance, reduce emissions and safeguard competition to ensure maritime transport can weather the next storm.</p>
           </div>
         </div>

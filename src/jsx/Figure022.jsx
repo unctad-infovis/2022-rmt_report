@@ -55,9 +55,9 @@ function Figure022() {
         title="The world’s shipping fleet is ageing"
         title_margin={60}
         ylabel=""
-        ymax={25}
-        ymin={15}
-        ytick_interval={5}
+        ymax={24}
+        ymin={16}
+        ytick_interval={2}
       />
       )}
     </div>

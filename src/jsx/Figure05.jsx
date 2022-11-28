@@ -47,6 +47,8 @@ function Figure05() {
         data={dataFigure}
         data_decimals={1}
         idx="05"
+        labels_align="left"
+        labels_inside
         note=""
         prefix=""
         source="UNCTAD, based on data provided by MDS Transmodal."
@@ -54,7 +56,7 @@ function Figure05() {
         title="Port traffic fell in all regions, but some suffered more"
         xlabelrotation={0}
         ylabel="Change"
-        ytick_interval={4}
+        ytick_interval={2}
         ymax={0}
         ymin={-16}
       />

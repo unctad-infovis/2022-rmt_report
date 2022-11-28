@@ -46,7 +46,7 @@ Highcharts.SVGRenderer.prototype.symbols.download = (x, y, w, h) => {
 };
 
 function BarChart({
-  chart_height, data, data_decimals, idx, labels_inside, note, prefix, source, subtitle, title, xlabel, ylabel, ytick_interval, ymax, ymin
+  chart_height, data, data_decimals, idx, labels_align, labels_inside, note, prefix, source, subtitle, title, xlabel, ylabel, ytick_interval, ymax, ymin
 }) {
   const chartRef = useRef();
 
@@ -136,7 +136,7 @@ function BarChart({
           cursor: 'pointer',
           groupPadding: 0,
           dataLabels: {
-            align: (labels_inside) ? 'left' : undefined,
+            align: labels_align,
             inside: (labels_inside === true) ? true : undefined,
             enabled: true,
             formatter() {
@@ -147,7 +147,7 @@ function BarChart({
             color: (labels_inside) ? '#fff' : 'rgba(0, 0, 0, 0.8)',
             style: {
               fontFamily: 'Roboto',
-              fontSize: '16px',
+              fontSize: '14px',
               fontWeight: 400,
               textOutline: 'none'
             }
@@ -304,7 +304,7 @@ function BarChart({
       }
     });
     chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
-  }, [chart_height, data, data_decimals, idx, labels_inside, note, prefix, source, subtitle, title, xlabel, ylabel, ytick_interval, ymax, ymin]);
+  }, [chart_height, data, data_decimals, idx, labels_align, labels_inside, note, prefix, source, subtitle, title, xlabel, ylabel, ytick_interval, ymax, ymin]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -329,6 +329,7 @@ BarChart.propTypes = {
   data: PropTypes.instanceOf(Array).isRequired,
   data_decimals: PropTypes.number.isRequired,
   idx: PropTypes.string.isRequired,
+  labels_align: PropTypes.string,
   labels_inside: PropTypes.bool,
   note: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   prefix: PropTypes.string,
@@ -344,6 +345,7 @@ BarChart.propTypes = {
 
 BarChart.defaultProps = {
   chart_height: 800,
+  labels_align: undefined,
   labels_inside: false,
   note: false,
   prefix: '',
