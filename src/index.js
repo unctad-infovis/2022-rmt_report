@@ -3,9 +3,9 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 
 import App from './jsx/App.jsx';
+import Figure01 from './jsx/Figure01.jsx';
 import Figure07 from './jsx/Figure07.jsx';
 import Figure10 from './jsx/Figure10.jsx';
-import Figure01 from './jsx/Figure01.jsx';
 
 const AppRoot = document.getElementById('app-root-2022-rmt_report');
 if (AppRoot) {
