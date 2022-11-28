@@ -165,7 +165,7 @@ function App() {
               )}
             </IsVisible>
             <p className="ingress">
-              Although delays have improved and rates have started to come down, maritime transport – and thus world trade – remains vulnerable. The industry must invest now to shore up its resilience to future crises and climate change.
+              Although delays have improved and dry cargo rates are coming down, maritime transport – and thus world trade – remains vulnerable. The industry must invest now to shore up its resilience to future crises and climate change.
             </p>
             <p className="ingress">
               Ports, shipping companies and transport operators need to expand capacity, renew and expand fleets and equipment, ensure adequate and skilled labour, improve connectivity and performance, reduce emissions and safeguard competition to ensure maritime transport can weather the next storm.

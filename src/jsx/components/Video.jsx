@@ -1,5 +1,5 @@
 import React, {
-  useState, useEffect, useRef, memo
+  useEffect, useRef
 } from 'react';
 import PropTypes from 'prop-types';
 
@@ -8,7 +8,7 @@ function Video({ anchorClick }) {
   const mp4Ref = useRef();
   const webmRef = useRef();
   const reportHeadline = useRef();
-  const [once, setOnce] = useState(false);
+  const onceRef = useRef(false);
 
   useEffect(() => {
     videoRef.current.src = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/assets/vid/' : './assets/vid/') + ((videoRef.current.offsetWidth < 768) ? '2022-rmt_report_video.mp4' : '2022-rmt_report_video.mp4');
@@ -31,12 +31,12 @@ function Video({ anchorClick }) {
   useEffect(() => {
     videoRef.current.addEventListener('ended', () => {
       videoRef.current.play();
-      if (once === false && document.documentElement.scrollTop < document.querySelector('.pagenavigation_container').offsetTop) {
-        setOnce(true);
+      if (onceRef.current === false && (document.documentElement.scrollTop < document.querySelector('.pagenavigation_container').offsetTop)) {
+        onceRef.current = true;
         anchorClick('.pagenavigation_container', 'Video ended');
       }
     });
-  }, [anchorClick, once]);
+  }, [anchorClick]);
 
   return (
     <div className="video_container">
@@ -54,19 +54,18 @@ function Video({ anchorClick }) {
         <h4 className="unctad_logo">
           <img src="https://unctad.org/sites/default/files/2022-11/unctad_logo_white.svg" alt="UNCTAD logo" />
         </h4>
+        <svg className="arrows" onClick={() => anchorClick('.pagenavigation_container', 'Arrows')}>
+          <path className="a1" d="M0 0 L30 32 L60 0" />
+          <path className="a2" d="M0 20 L30 52 L60 20" />
+          <path className="a3" d="M0 40 L30 72 L60 40" />
+        </svg>
       </div>
-      <div className="video_headline_wrapper" />
       <video autoPlay muted playsInline ref={videoRef} poster="">
         <source src="" type="video/mp4" ref={mp4Ref} />
         <source src="" type="video/webm" ref={webmRef} />
         <track default kind="captions" srcLang="en" src="" />
         Your browser does not support the video tag.
       </video>
-      <svg className="arrows" onClick={() => anchorClick('.pagenavigation_container', 'Arrows')}>
-        <path className="a1" d="M0 0 L30 32 L60 0" />
-        <path className="a2" d="M0 20 L30 52 L60 20" />
-        <path className="a3" d="M0 40 L30 72 L60 40" />
-      </svg>
     </div>
   );
 }
@@ -79,4 +78,4 @@ Video.defaultProps = {
 
 };
 
-export default memo(Video);
+export default Video;

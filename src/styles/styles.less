@@ -18,74 +18,16 @@
 
   .video_container {
     font-size: 0;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     margin: 0;
     position: relative;
-    .video_headline_wrapper {
-      align-items: center;
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      margin: auto auto;
-      max-width: 1000px;
-      position: relative;
-      .video_headline {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        height: 400px;
-        justify-content: center;
-        z-index: 2;
-        h2 {
-          color: #fff;
-          font-family: Roboto Condensed, "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 100px;
-          text-align: center;
-          line-height: 100px;
-          font-weight: 700;
-          margin: 0 20px 10px 20px;
-          text-shadow: 1px 1px 1px @ungreen;
-          @media all and (max-width: 900px) {
-            font-size: 70px;  
-            line-height: 70px;  
-          }
-          @media all and (max-width: 700px) {
-            font-size: 80px;  
-            line-height: 80px;  
-          }
-          @media all and (max-width: 400px) {
-            font-size: 50px;  
-            line-height: 50px;  
-          }
-        }
-        h3 {
-          color: rgb(208 227 154);
-          font-family: Roboto Condensed, "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: 70px;
-          line-height: 75px;
-          font-weight: 400;
-          text-align: center;
-          margin: 0 20px 0px 20px;
-          @media all and (max-width: 900px) {
-            font-size: 60px;  
-            line-height: 60px;  
-          }
-          @media all and (max-width: 700px) {
-            font-size: 50px;
-            line-height: 50px;
-          }
-          @media all and (max-width: 400px) {
-            font-size: 40px;
-            line-height: 40px;
-          }
-        }
-      }
-    }
     .title_container {
       align-items: center;
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      min-height: 100vh;
+      height: 100%;
       justify-content: center;
       margin: auto auto;
       position: relative;
@@ -94,13 +36,14 @@
         margin: 0;
         &.report_title {
           background-color: rgba(0, 158, 219, 0.5);
+          box-sizing: border-box;
           color: #fff;
           font-size: 46px;
           font-weight: 400;
           line-height: 46px;
           overflow: hidden;
           padding: 10px 60px 10px 60px;
-          position: absolute;
+          position: relative;
           text-align: center;
           text-transform: uppercase;
           top: 0;
@@ -153,10 +96,16 @@
         }
         &.report_headline {
           color: #fff;
+          vertical-align: middle;
+          flex-grow: 3;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
           font-size: 120px;
           font-weight: 600;
           line-height: 120px;
-          margin-top: 140px;
+          margin-top: 20px;
           opacity: 0;
           position: relative;
           text-align: center;
@@ -187,12 +136,13 @@
         &.unctad_logo {
           margin-top: 40px;
           opacity: 0;
+          flex-grow: 2;
           position: relative;
           transition-duration: 2s;
           transition-property: opacity;
           z-index: 2;
           img {
-            width: 80px;
+            width: 100px;
           }
           &.show {
             opacity: 1;
