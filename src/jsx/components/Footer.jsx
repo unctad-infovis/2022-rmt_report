@@ -17,8 +17,8 @@ function Footer() {
       <h2>What do you want to do next?</h2>
       <div className="download_button anchor_downloads"><a href="https://unctad.org/webflyer/review-maritime-transport-2022">Download the report</a></div>
       <div className="footer_elements">
-        <div className="footer_element footer_element_1">
-          <div className="footer_content anchor_video">
+        <div className="footer_element footer_element_1 anchor_video">
+          <div className="footer_content hidden">
             <h3>Watch the video</h3>
             <div className="iframe_container youtube_iframe">
               <iframe src="" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
