@@ -105,7 +105,7 @@ function Footer() {
               </li>
             </ul>
             <h4><a href="https://unctad.org/webflyer/review-maritime-transport-2022">Download the report</a></h4>
-            <div><a href="https://unctad.org/webflyer/review-maritime-transport-2022"><img src={`${window.location.href.includes('unctad') ? 'https://storage.unctad.org/2022-ldc_report/' : './'}assets/img/2022-rmt_report_cover.png`} alt="RMT 2022 Cover" /></a></div>
+            <div><a href="https://unctad.org/webflyer/review-maritime-transport-2022"><img src={`${window.location.href.includes('unctad') ? 'https://storage.unctad.org/2022-rmt_report/' : './'}assets/img/2022-rmt_report_cover.png`} alt="RMT 2022 Cover" /></a></div>
           </div>
         </div>
       </div>

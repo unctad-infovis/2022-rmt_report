@@ -1,4 +1,6 @@
-import React, { /* useState, */ useEffect, useRef, memo } from 'react';
+import React, {
+  useState, useEffect, useRef, memo
+} from 'react';
 import PropTypes from 'prop-types';
 
 function Video({ anchorClick }) {
@@ -6,6 +8,7 @@ function Video({ anchorClick }) {
   const mp4Ref = useRef();
   const webmRef = useRef();
   const reportHeadline = useRef();
+  const [once, setOnce] = useState(false);
 
   useEffect(() => {
     videoRef.current.src = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/assets/vid/' : './assets/vid/') + ((videoRef.current.offsetWidth < 768) ? '2022-rmt_report_video.mp4' : '2022-rmt_report_video.mp4');
@@ -16,7 +19,6 @@ function Video({ anchorClick }) {
       videoRef.current.play();
       const interval = setInterval(() => {
         if (videoRef.current.currentTime > 3) {
-          document.querySelector('body').style.overflow = 'scroll';
           reportHeadline.current.classList.add('show');
           document.querySelector('.arrows').classList.add('show');
           document.querySelector('.unctad_logo').classList.add('show');
@@ -24,19 +26,17 @@ function Video({ anchorClick }) {
         }
       }, 100);
     }
-    if (document.documentElement.scrollTop > 0) {
-      document.querySelector('body').style.overflow = 'scroll';
-    }
   }, []);
 
   useEffect(() => {
     videoRef.current.addEventListener('ended', () => {
       videoRef.current.play();
-      if (document.documentElement.scrollTop === 0) {
+      if (once === false && document.documentElement.scrollTop < document.querySelector('.pagenavigation_container').offsetTop) {
+        setOnce(true);
         anchorClick('.pagenavigation_container', 'Video ended');
       }
     });
-  }, [anchorClick]);
+  }, [anchorClick, once]);
 
   return (
     <div className="video_container">

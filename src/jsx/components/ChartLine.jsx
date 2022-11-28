@@ -64,7 +64,7 @@ function LineChart({
           fontFamily: 'Roboto',
           fontSize: '14px'
         },
-        text: `<em>Source:</em> <a href="https://unctadstat.unctad.org/wds/">${source}</a> ${note ? (`<br /><em>Note:</em> <span>${note}</span>`) : ''}`,
+        text: `<em>Source:</em> ${source} ${note ? (`<br /><em>Note:</em> <span>${note}</span>`) : ''}`,
         verticalAlign: 'bottom',
         x: 0
       },
@@ -380,7 +380,7 @@ function LineChart({
   }, [createChart, isVisible]);
 
   return (
-    <div className="chart_container">
+    <div className="chart_container" style={{ minHeight: chart_height }}>
       <div ref={chartRef}>
         {(isVisible) && (<div className="chart" id={`chartIdx${idx}`} />)}
       </div>

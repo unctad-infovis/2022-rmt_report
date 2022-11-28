@@ -40,7 +40,7 @@ function Figure041() {
   }, []);
 
   return (
-    <div>
+    <div className="app">
       {dataFigure && (
       <ChartBar
         data={dataFigure}

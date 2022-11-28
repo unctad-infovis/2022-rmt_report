@@ -40,7 +40,7 @@ function Figure05() {
   }, []);
 
   return (
-    <div>
+    <div className="app">
       {dataFigure && (
       <ChartBar
         chart_height={600}

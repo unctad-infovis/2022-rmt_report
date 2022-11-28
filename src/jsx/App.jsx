@@ -147,7 +147,7 @@ function App() {
     <div className="app" ref={appRef}>
       <Video anchorClick={anchorClick} />
       <PageNavigation appRef={appRef} />
-      <div className="two_column_layout">
+      <div className="two_column_layout center">
         <div className="left_column">
           <div className="text_container">
             <p className="ingress">
@@ -304,7 +304,8 @@ function App() {
                     </p>
                   )}
                 </IsVisible>
-                <p>The world needs a new generation of ships that can use the most cost-efficient fuels and integrate seamlessly with smart digital systems. But shipbuilding volumes remain low. The global commercial fleet grew by less than 3% in 2021 – the second lowest rate since 2005. </p>
+                <p>The world needs a new generation of ships that can use the most cost-efficient fuels and integrate seamlessly with smart digital systems. But shipbuilding volumes remain low. The global commercial fleet grew by less than 3% in 2021 – the second lowest rate since 2005.</p>
+                <p>Adapting ports and other critical transport infrastructure to the impacts of climate change is a matter of increasing urgency, especially for the most vulnerable countries.</p>
                 <Figure0431 />
               </div>
             </div>

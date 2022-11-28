@@ -32,7 +32,7 @@ function Figure07() {
   }, []);
 
   return (
-    <div>
+    <div className="app">
       {dataFigure && (
       <ChartStackedColumn
         data={dataFigure}
