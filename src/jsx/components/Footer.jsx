@@ -18,24 +18,24 @@ function Footer() {
       <div className="download_button anchor_downloads"><a href="https://unctad.org/webflyer/review-maritime-transport-2022">Download the report</a></div>
       <div className="footer_elements">
         <div className="footer_element footer_element_1 anchor_video">
-          <div className="footer_content hidden">
+          <div className="footer_content">
             <h3>Watch the video</h3>
             <div className="iframe_container youtube_iframe">
-              <iframe src="" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              <iframe src="https://www.youtube.com/embed/b4ZsYCV9sl4" title="UNCTAD’s Review of Maritime Transport 2022" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
             </div>
             <ul>
               <li>
-                <a href="#1" target="_blank" rel="noreferrer">Français</a>
+                <a href="https://youtu.be/HJud-u39frA" target="_blank" rel="noreferrer">Français</a>
                 {', '}
-                <a href="#1" target="_blank" rel="noreferrer">Español</a>
+                <a href="https://youtu.be/KpIMAF9-3sI" target="_blank" rel="noreferrer">Español</a>
                 {', '}
-                <a href="#1" target="_blank" rel="noreferrer">العربية</a>
+                <a href="https://youtu.be/PsxVFWJ4nGI" target="_blank" rel="noreferrer">العربية</a>
                 {', '}
-                <a href="#1" target="_blank" rel="noreferrer">简体中文</a>
+                <a href="https://youtu.be/QkjVD-4A_FA" target="_blank" rel="noreferrer">简体中文</a>
                 {', '}
-                <a href="#1" target="_blank" rel="noreferrer">Русский</a>
+                <a href="https://youtu.be/_UMbVl2doIo" target="_blank" rel="noreferrer">Русский</a>
                 {', '}
-                <a href="#1" target="_blank" rel="noreferrer">Português</a>
+                <a href="https://youtu.be/XX8NRPdegxc" target="_blank" rel="noreferrer">Português</a>
               </li>
             </ul>
           </div>
@@ -63,23 +63,23 @@ function Footer() {
               </li>
             </ul>
             <ul>
-              <li className="hidden">
+              <li>
                 <h4>Download the report video</h4>
                 <ul>
                   <li>
-                    <a href="#1" target="_blank" rel="noreferrer">English</a>
+                    <a href="https://vimeo.com/774818435" target="_blank" rel="noreferrer">English</a>
                     {', '}
-                    <a href="#1" target="_blank" rel="noreferrer">Français</a>
+                    <a href="https://vimeo.com/775969875" target="_blank" rel="noreferrer">Français</a>
                     {', '}
-                    <a href="#1" target="_blank" rel="noreferrer">Español</a>
+                    <a href="https://vimeo.com/775969988" target="_blank" rel="noreferrer">Español</a>
                     {', '}
-                    <a href="#1" target="_blank" rel="noreferrer">العربية</a>
+                    <a href="https://vimeo.com/775969784" target="_blank" rel="noreferrer">العربية</a>
                     {', '}
-                    <a href="#1" target="_blank" rel="noreferrer">简体中文</a>
+                    <a href="https://vimeo.com/775969820" target="_blank" rel="noreferrer">简体中文</a>
                     {', '}
-                    <a href="#1" target="_blank" rel="noreferrer">Русский</a>
+                    <a href="https://vimeo.com/775969943" target="_blank" rel="noreferrer">Русский</a>
                     {', '}
-                    <a href="#1" target="_blank" rel="noreferrer">Português</a>
+                    <a href="https://vimeo.com/775969907" target="_blank" rel="noreferrer">Português</a>
                   </li>
                 </ul>
               </li>

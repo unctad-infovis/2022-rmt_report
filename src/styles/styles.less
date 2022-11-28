@@ -12,9 +12,6 @@
   }
 }
 
-.highcharts-exporting-group {
-  opacity: 0;
-}
 .app-root-2022-rmt_report .app {
   @import 'arrows.less';
   font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -368,7 +365,15 @@
       margin: auto auto;
       max-width: @content_max_width;
       position: relative;
-      @media all and (max-width: 991px) {
+      @media all and (max-width: 414px) {
+        padding: 5% 0 70% 0;
+        max-width: 600px;
+      }
+      @media all and (max-width: 768px) and (min-width: 415px) {
+        padding: 5% 0 50% 0;
+        max-width: 600px;
+      }
+      @media all and (max-width: 991px) and (min-width: 769px) {
         padding: 5% 0 40% 0;
         max-width: 600px;
       }
@@ -565,7 +570,7 @@
             margin-bottom: 15px;
             position: relative;
             text-transform: uppercase;
-            transform: translate(0, -250px);
+            transform: translate(0, -300px);
             &.visible {
               transform: translate(0, 0);
               transition-duration: 1.5s;
@@ -586,7 +591,7 @@
             margin-bottom: 15px;
             max-width: 450px;
             position: relative;
-            transform: translate(0, 200px);
+            transform: translate(0, 250px);
             &.visible {
               transform: translate(0, 0);
               transition-duration: 1.5s;

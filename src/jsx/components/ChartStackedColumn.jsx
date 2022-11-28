@@ -168,10 +168,41 @@ function ColumnChart({
           chartOptions: {
             legend: {
               layout: 'horizontal'
+            },
+            title: {
+              margin: 10,
+              style: {
+                fontSize: '26px',
+                lineHeight: '30px'
+              }
             }
           },
           condition: {
             maxWidth: 500
+          }
+        }, {
+          chartOptions: {
+            chart: {
+              height: chartHeight + 100
+            },
+            legend: {
+              layout: 'horizontal'
+            }
+          },
+          condition: {
+            maxWidth: 450
+          }
+        }, {
+          chartOptions: {
+            chart: {
+              height: chartHeight + 150
+            },
+            legend: {
+              layout: 'horizontal'
+            }
+          },
+          condition: {
+            maxWidth: 350
           }
         }]
       },

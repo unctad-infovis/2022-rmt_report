@@ -159,6 +159,13 @@ function BarChart({
           chartOptions: {
             legend: {
               layout: 'horizontal'
+            },
+            title: {
+              margin: 10,
+              style: {
+                fontSize: '26px',
+                lineHeight: '30px'
+              }
             }
           },
           condition: {
