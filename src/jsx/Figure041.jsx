@@ -48,7 +48,7 @@ function Figure041() {
         idx="041"
         note="Ships of 1,000GT and above."
         source="UNCTAD, based on data provided by MarineTraffic"
-        subtitle="Median time in port in hours, first semester 2022, container ships. Developing countries are marked in cursive"
+        subtitle="Median time in port in hours, first semester 2022, top 20 countries in terms of number of container ship arrivals."
         title="Port performance: Big differences among top countries"
         ylabel="Hours in port"
         xlabelrotation={0}

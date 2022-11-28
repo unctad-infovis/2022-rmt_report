@@ -222,7 +222,7 @@ function BarChart({
           width: 1
         },
         labels: {
-          formatter: (el) => ((el.value === 'World') ? `<strong>${el.value}</strong>` : (el.value === 'Indonesia') ? `<em>${el.value}</em>` : el.value),
+          formatter: (el) => ((el.value === 'World') ? `<strong>${el.value}</strong>` : (el.value === 'Indonesia') ? `${el.value}` : el.value),
           rotation: 0,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
