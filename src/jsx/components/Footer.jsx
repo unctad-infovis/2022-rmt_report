@@ -15,7 +15,7 @@ function Footer() {
   return (
     <div className="footer_container">
       <h2>What do you want to do next?</h2>
-      <div className="download_button anchor_downloads"><a href="#1">Download the report</a></div>
+      <div className="download_button anchor_downloads"><a href="https://unctad.org/webflyer/review-maritime-transport-2022">Download the report</a></div>
       <div className="footer_elements">
         <div className="footer_element footer_element_1">
           <div className="footer_content anchor_video">
@@ -43,14 +43,15 @@ function Footer() {
             <h3>Podcast</h3>
             <p>Listen to the Weekly Tradecast episodes that explore some of the main issues in the report</p>
             <div className="iframe_container">
-              <iframe title="The Weekly Tradecast" height="150" width="100%" style={{ border: 'none', minWidth: 'min(100%, 430px)' }} scrolling="no" data-name="pb-iframe-player" src="" allowFullScreen />
+              <iframe title="17. Sea of trouble: Turning our ships gree" height="150" width="100%" style={{ border: 'none', minWidth: 'min(100%, 430px)' }} scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=t25dz-12f9d19-pb&btn-skin=009EDB&download=1&font-color=000000&fonts=Verdana&from=pb6admin&logo_link=none&rtl=0&share=1&size=240&skin=ffffff" allowFullScreen />
+              <iframe title="3. Stormy waters: The maritime trade crisis" height="150" width="100%" style={{ border: 'none', minWidth: 'min(100%, 430px)' }} scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=r9faf-127b433-pb&btn-skin=009EDB&download=1&font-color=000000&fonts=Verdana&from=pb6admin&logo_link=none&rtl=0&share=1&size=240&skin=ffffff" allowFullScreen />
             </div>
           </div>
         </div>
         <div className="footer_element footer_element_2">
           <div className="footer_content anchor_press">
             <h3>Press material</h3>
-            <ul>
+            <ul className="hidden">
               <li>
                 <h4>Press conference</h4>
                 <div className="iframe_container youtube_iframe">
@@ -61,7 +62,7 @@ function Footer() {
                 </ul>
               </li>
             </ul>
-            <ul>
+            <ul className="hidden">
               <li>
                 <h4>Download the report video</h4>
                 <ul>
@@ -103,8 +104,8 @@ function Footer() {
                 </ul>
               </li>
             </ul>
-            <h4><a href="#1">Download the report</a></h4>
-            <div><a href="#1"><img src={`${window.location.href.includes('unctad') ? 'https://storage.unctad.org/2022-ldc_report/' : './'}assets/img/`} alt="RMT 2022 Cover" /></a></div>
+            <h4><a href="https://unctad.org/webflyer/review-maritime-transport-2022">Download the report</a></h4>
+            <div><a href="https://unctad.org/webflyer/review-maritime-transport-2022"><img src={`${window.location.href.includes('unctad') ? 'https://storage.unctad.org/2022-ldc_report/' : './'}assets/img/2022-rmt_report_cover.png`} alt="RMT 2022 Cover" /></a></div>
           </div>
         </div>
       </div>
