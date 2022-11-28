@@ -49,15 +49,17 @@ function Figure032() {
         idx="032"
         line_width={4}
         note=""
+        prefix="$"
         show_only_first_and_last_labels={false}
         source="UNCTAD, based on data from Clarksons Shippping Intelligence Network."
         subtitle="Shanghai Containerized Freight Index, US dollars per container per shipment, Jan 2018 – Nov 2022 "
         suffix=""
         title="The volatile ride of shipping costs"
+        title_margin={60}
         tooltip_date_interval="day"
         tooltip_label=""
         ylabel=""
-        ymax={5500}
+        ymax={6000}
         ymin={0}
         ytick_interval={1000}
       />

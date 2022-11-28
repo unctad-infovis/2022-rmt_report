@@ -19,6 +19,7 @@ function Video({ anchorClick }) {
           document.querySelector('body').style.overflow = 'scroll';
           reportHeadline.current.classList.add('show');
           document.querySelector('.arrows').classList.add('show');
+          document.querySelector('.unctad_logo').classList.add('show');
           clearInterval(interval);
         }
       }, 100);

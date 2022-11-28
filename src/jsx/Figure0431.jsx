@@ -53,12 +53,12 @@ function Figure0431() {
         source="UNCTAD, based on data provided by Marine Benchmark"
         subtitle="Total CO2 emissions of world’s merchant fleet, annualized monthly, January 2012 – April 2022, million tons"
         tooltip_date_interval="month"
-        suffix=""
+        suffix="Mt"
         title="World fleet’s CO2 emissions heading in the wrong direction"
         tooltip_label=""
         ylabel=""
         ymax={900}
-        ymin={400}
+        ymin={500}
         ytick_interval={100}
       />
       )}

@@ -128,50 +128,6 @@ function BarChart({
         margin: 0,
         verticalAlign: 'top'
       },
-      subtitle: {
-        align: 'left',
-        enabled: true,
-        style: {
-          color: 'rgba(0, 0, 0, 0.8)',
-          fontSize: '16px',
-          fontWeight: 400,
-          lineHeight: '18px'
-        },
-        text: subtitle,
-        widthAdjust: -100,
-        x: 100
-      },
-      title: {
-        align: 'left',
-        margin: 40,
-        style: {
-          color: '#000',
-          fontSize: '30px',
-          fontWeight: 700,
-          lineHeight: '34px'
-        },
-        text: title,
-        widthAdjust: -144,
-        x: 100
-      },
-      tooltip: {
-        backgroundColor: '#fff',
-        borderColor: '#ccc',
-        borderRadius: 0,
-        borderWidth: 1,
-        crosshairs: true,
-        formatter() {
-          // eslint-disable-next-line react/no-this-in-sfc
-          const values = this.points.map(point => [point.series.name, point.y, point.color]);
-          const rows = [];
-          rows.push(values.map(point => `<div style="color: ${point[2]}"><span class="tooltip_label">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${roundNr(point[1], data_decimals)}</span></div>`).join(''));
-          // eslint-disable-next-line react/no-this-in-sfc
-          return `<div class="tooltip_container"><h3 class="tooltip_header">${xlabel} ${prefix}${this.x}</h3>${rows}</div>`;
-        },
-        shadow: false,
-        shared: true,
-        useHTML: true
-      },
       plotOptions: {
         bar: {
           animation: {
@@ -211,6 +167,50 @@ function BarChart({
         }]
       },
       series: data,
+      subtitle: {
+        align: 'left',
+        enabled: true,
+        style: {
+          color: 'rgba(0, 0, 0, 0.8)',
+          fontSize: '16px',
+          fontWeight: 400,
+          lineHeight: '18px'
+        },
+        text: subtitle,
+        widthAdjust: -100,
+        x: 100
+      },
+      title: {
+        align: 'left',
+        margin: 20,
+        style: {
+          color: '#000',
+          fontSize: '30px',
+          fontWeight: 700,
+          lineHeight: '34px'
+        },
+        text: title,
+        widthAdjust: -144,
+        x: 100
+      },
+      tooltip: {
+        backgroundColor: '#fff',
+        borderColor: '#ccc',
+        borderRadius: 0,
+        borderWidth: 1,
+        crosshairs: true,
+        formatter() {
+          // eslint-disable-next-line react/no-this-in-sfc
+          const values = this.points.map(point => [point.series.name, point.y, point.color]);
+          const rows = [];
+          rows.push(values.map(point => `<div style="color: ${point[2]}"><span class="tooltip_label">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${prefix}${roundNr(point[1], data_decimals)}</span></div>`).join(''));
+          // eslint-disable-next-line react/no-this-in-sfc
+          return `<div class="tooltip_container"><h3 class="tooltip_header">${xlabel} ${this.points[0].key}</h3>${rows}</div>`;
+        },
+        shadow: false,
+        shared: true,
+        useHTML: true
+      },
       xAxis: {
         accessibility: {
           description: xlabel
@@ -222,7 +222,7 @@ function BarChart({
           width: 1
         },
         labels: {
-          formatter: (el) => ((el.value === 'World') ? `<strong>${el.value}</strong>` : el.value),
+          formatter: (el) => ((el.value === 'World') ? `<strong>${el.value}</strong>` : (el.value === 'Indonesia') ? `<em>${el.value}</em>` : el.value),
           rotation: 0,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',

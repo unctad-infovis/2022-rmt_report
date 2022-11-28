@@ -181,10 +181,16 @@ body {
         }
         &.unctad_logo {
           margin-top: 40px;
+          opacity: 0;
           position: relative;
+          transition-duration: 2s;
+          transition-property: opacity;
           z-index: 2;
           img {
             width: 80px;
+          }
+          &.show {
+            opacity: 1;
           }
         }
       }

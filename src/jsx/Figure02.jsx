@@ -80,6 +80,7 @@ function Figure02() {
         subtitle="Port calls per half year, world total, first semester 2019–first semester 2022"
         suffix=""
         title="The roller-coaster of global port traffic"
+        title_margin={50}
         ylabel="Year"
         tooltip_date_interval="semester"
         tooltip_label=""

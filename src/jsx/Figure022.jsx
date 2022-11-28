@@ -53,6 +53,7 @@ function Figure022() {
         subtitle="Average age of merchant fleet, 2011–2022"
         suffix=" years"
         title="The world’s shipping fleet is ageing"
+        title_margin={60}
         ylabel=""
         ymax={25}
         ymin={15}
