@@ -164,12 +164,8 @@ function App() {
                 </p>
               )}
             </IsVisible>
-            <p className="ingress">
-              Although delays have improved and dry cargo rates are coming down, maritime transport – and thus world trade – remains vulnerable. The industry must invest now to shore up its resilience to future crises and climate change.
-            </p>
-            <p className="ingress">
-              Ports, shipping companies and transport operators need to expand capacity, renew and expand fleets and equipment, ensure adequate and skilled labour, improve connectivity and performance, reduce emissions and safeguard competition to ensure maritime transport can weather the next storm.
-            </p>
+            <p className="ingress">Although delays have improved and dry cargo rates are coming down, maritime transport – and thus world trade – remains vulnerable. The industry must invest now to shore up its resilience to future crises and climate change.</p>
+            <p className="ingress">Ports, shipping companies and transport operators need to expand capacity, renew and expand fleets and equipment, ensure adequate and skilled labour, improve connectivity and performance, reduce emissions and safeguard competition to ensure maritime transport can weather the next storm.</p>
           </div>
         </div>
         <div className="right_column">
@@ -321,9 +317,7 @@ function App() {
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
-                <p>
-                  The global economy picked up in 2021 and the world’s cargo-carrying ships made more port calls. The rebound continued in the first nine months of 2022 in all segments except container ships, which faced continuing congestion.
-                </p>
+                <p>The global economy picked up in 2021 and the world’s cargo-carrying ships made more port calls. The rebound continued in the first nine months of 2022 in all segments except container ships, which faced continuing congestion.</p>
                 <p>The median turnaround time for container ships, which carry most of the world’s manufactured goods, increased by 13.7% between 2020 and 2021.</p>
                 <IsVisible once>
                   {(isVisible) => (
@@ -369,7 +363,7 @@ function App() {
           <div className="two_column_layout">
             <div className="left_column">
               <div className="text_container">
-                <p>Over the years, mergers and acquisitions have consolidated and transformed the container shipping sector, which carries most consumer goods. Carriers have also pursued vertical integration by investing in terminal operations and other logistics services.  </p>
+                <p>Over the years, mergers and acquisitions have consolidated and transformed the container shipping sector, which carries most consumer goods. Carriers have also pursued vertical integration by investing in terminal operations and other logistics services.</p>
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
@@ -390,7 +384,7 @@ function App() {
                     </p>
                   )}
                 </IsVisible>
-                <p>Integration has given carriers and their alliances stronger negotiating and bargaining positions vis-à-vis port authorities, as they now have two seats at the table – as both tenants of terminals and providers of shipping services. </p>
+                <p>Integration has given carriers and their alliances stronger negotiating and bargaining positions vis-à-vis port authorities, as they now have two seats at the table – as both tenants of terminals and providers of shipping services.</p>
                 <IsVisible once>
                   {(isVisible) => (
                     <p>
