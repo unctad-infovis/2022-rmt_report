@@ -11,7 +11,7 @@ function Video({ anchorClick }) {
     videoRef.current.src = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/assets/vid/' : './assets/vid/') + ((videoRef.current.offsetWidth < 768) ? '2022-rmt_report_video.mp4' : '2022-rmt_report_video.mp4');
     mp4Ref.current.src = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/assets/vid/' : './assets/vid/') + ((videoRef.current.offsetWidth < 768) ? '2022-rmt_report_video.mp4' : '2022-rmt_report_video.mp4');
     webmRef.current.src = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/assets/vid/' : './assets/vid/') + ((videoRef.current.offsetWidth < 768) ? '2022-rmt_report_video.webm' : '2022-rmt_report_video.webm');
-    videoRef.current.poster = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/assets/img/' : './assets/img/') + ((videoRef.current.offsetWidth < 768) ? '2022-rmt_report_section-min.jpg' : '2022-rmt_report_section-min.jpg');
+    videoRef.current.poster = (window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/assets/img/' : './assets/img/') + ((videoRef.current.offsetWidth < 768) ? '2022-rmt_report_video.png' : '2022-rmt_report_video.png');
     if (!videoRef.current.playing) {
       videoRef.current.play();
       const interval = setInterval(() => {
