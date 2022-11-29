@@ -135,7 +135,7 @@ function App() {
           lockX: false,
           lockY: false,
           top: 0,
-          topOffset: 0
+          topOffset: 30
         },
         cancellable: false,
         time: 1000
