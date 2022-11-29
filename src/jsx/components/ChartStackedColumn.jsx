@@ -62,6 +62,7 @@ function ColumnChart({
           fontSize: '14px'
         },
         text: `<em>Source:</em> ${source} ${note ? (`<br /><em>Note:</em> <span>${note}</span>`) : ''}`,
+        useHTML: true,
         verticalAlign: 'bottom',
         x: 0
       },

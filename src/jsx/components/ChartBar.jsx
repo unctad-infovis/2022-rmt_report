@@ -61,6 +61,7 @@ function BarChart({
           fontSize: '14px'
         },
         text: `<em>Source:</em> ${source} ${note ? (`<br /><em>Note:</em> <span>${note}</span>`) : ''}`,
+        useHTML: true,
         verticalAlign: 'bottom',
         x: 0
       },
@@ -184,7 +185,7 @@ function BarChart({
           lineHeight: '18px'
         },
         text: subtitle,
-        widthAdjust: -100,
+        widthAdjust: -144,
         x: 100
       },
       title: {
@@ -228,8 +229,9 @@ function BarChart({
           color: 'rgba(124, 112, 103, 0.2)',
           width: 1
         },
+        reserveSpace: true,
         labels: {
-          formatter: (el) => ((el.value === 'World') ? `<strong>${el.value}</strong>` : (el.value === 'Indonesia') ? `${el.value}` : el.value),
+          formatter: (el) => ((el.value === 'World') ? `<strong>${el.value}</strong>` : (el.value === 'Latin America and the Caribbean') ? 'Latin America and<br />the Caribbean' : el.value),
           rotation: 0,
           style: {
             color: 'rgba(0, 0, 0, 0.8)',
@@ -322,7 +324,7 @@ function BarChart({
   }, [createChart, isVisible]);
 
   return (
-    <div className="chart_container" style={{ minHeight: chart_height }}>
+    <div className="chart_container" style={{ minHeight: chart_height, maxWidth: '700px' }}>
       <div ref={chartRef}>
         {(isVisible) && (<div className="chart" id={`chartIdx${idx}`} />)}
       </div>

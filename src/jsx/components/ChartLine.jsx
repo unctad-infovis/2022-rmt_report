@@ -65,6 +65,7 @@ function LineChart({
           fontSize: '14px'
         },
         text: `<em>Source:</em> ${source} ${note ? (`<br /><em>Note:</em> <span>${note}</span>`) : ''}`,
+        useHTML: true,
         verticalAlign: 'bottom',
         x: 0
       },
@@ -256,7 +257,7 @@ function LineChart({
           lineHeight: '18px'
         },
         text: subtitle,
-        widthAdjust: -100,
+        widthAdjust: -144,
         x: 100
       },
       title: {
@@ -369,6 +370,9 @@ function LineChart({
       }
     });
     chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
+
+    console.log(Highcharts.charts);
+    Highcharts.charts[0].redraw(true);
   }, [allow_decimals, change, chart_height, data, data_decimals, idx, line_width, month_names, note, plot_lines, prefix, show_only_first_and_last_labels, source, subtitle, suffix, title, title_margin, tooltip_date_interval, tooltip_label, ymax, ymin, ytick_interval]);
 
   useEffect(() => {
@@ -382,7 +386,7 @@ function LineChart({
   return (
     <div className="chart_container" style={{ minHeight: chart_height }}>
       <div ref={chartRef}>
-        {(isVisible) && (<div className="chart" id={`chartIdx${idx}`} />)}
+        {(isVisible) && (<div className="chart" id={`chartIdx${idx}`} style={{ maxWidth: '700px' }} />)}
       </div>
       <noscript>Your browser does not support JavaScript!</noscript>
     </div>
