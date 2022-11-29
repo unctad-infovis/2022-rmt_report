@@ -141,7 +141,7 @@ function ColumnChart({
             enabled: true,
             formatter() {
               // eslint-disable-next-line react/no-this-in-sfc
-              return `${roundNr(this.y, 1)}`;
+              return `${roundNr(this.y, 2)}`;
             },
             style: {
               color: '#fff',
