@@ -371,7 +371,6 @@ function LineChart({
     });
     chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
 
-    console.log(Highcharts.charts);
     Highcharts.charts[0].redraw(true);
   }, [allow_decimals, change, chart_height, data, data_decimals, idx, line_width, month_names, note, plot_lines, prefix, show_only_first_and_last_labels, source, subtitle, suffix, title, title_margin, tooltip_date_interval, tooltip_label, ymax, ymin, ytick_interval]);
 
