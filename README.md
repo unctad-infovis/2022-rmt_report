@@ -5,6 +5,16 @@
 ## Used in
 
 * [Review of Maritime Transport 2022](https://unctad.org/rmt2022)
+* [UNCTAD/Twitter](https://twitter.com/UNCTAD/status/1599823840280018944)
+* [UNCTAD/Twitter](https://twitter.com/UNCTAD/status/1598994973801984000)
+* [UNCTAD/Twitter](https://twitter.com/UNCTAD/status/1598325737374863367)
+* [UNCTAD/Twitter](https://twitter.com/UNCTAD/status/1598325737374863367)
+* [UNCTAD/Twitter](https://twitter.com/UNCTAD/status/1597615271392514048)
+* [UNCTAD/Instagram](https://www.instagram.com/p/CljNLGrovox/)
+* [UNCTAD/Instagram](https://www.instagram.com/p/ClmbNRSMjqe/)
+* [UNCTAD/Instagram](https://www.instagram.com/p/CloQQ0GoSmi/)
+* [UNCTAD/Instagram](https://www.instagram.com/p/CltGHkdsMbX/)
+* [UNCTAD/Instagram](https://www.instagram.com/p/Clyl-QWqS6X/)
 
 ## Rights of usage
 
