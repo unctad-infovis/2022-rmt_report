@@ -51,15 +51,16 @@ function Footer() {
         <div className="footer_element footer_element_2">
           <div className="footer_content anchor_press">
             <h3>Press material</h3>
-            <ul className="hidden">
+            <ul>
               <li>
                 <h4>Press conference</h4>
                 <div className="iframe_container youtube_iframe">
-                  <iframe src="" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                  <iframe src="https://www.youtube.com/embed/hd4ksmSbm0A" title="UNCTAD's Review of Maritime Transport 2022: press conference" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
                 </div>
-                <ul>
-                  <li><a href="#1" target="_blank" rel="noreferrer">Download the press conference</a></li>
-                </ul>
+                <h4>Presentation</h4>
+                <div className="iframe_container youtube_iframe">
+                  <iframe src="https://www.youtube.com/embed/KG_KLaMODzk" title="Presentation of the Review of Maritime Transport 2022" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                </div>
               </li>
             </ul>
             <ul>
