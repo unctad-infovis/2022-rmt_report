@@ -52,7 +52,7 @@ function Figure032() {
         prefix="$"
         show_only_first_and_last_labels={false}
         source="UNCTAD, based on data from Clarksons Shipping Intelligence Network."
-        subtitle="Shanghai Containerized Freight Index, US dollars per container per shipment, Jan 2018 – Nov 2022 "
+        subtitle="Shanghai Containerized Freight Index, US dollars per container per shipment, Jan 2018 – Nov 2022"
         suffix=""
         title="The dramatic rise and fall of shipping costs"
         title_margin={60}

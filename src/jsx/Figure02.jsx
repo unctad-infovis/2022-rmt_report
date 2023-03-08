@@ -77,7 +77,7 @@ function Figure02() {
         note="Ships of 1,000 GT and above, not including passenger ships and roll-on/roll-off vessels."
         show_only_first_and_last_labels
         source="UNCTAD, based on data provided by MarineTraffic."
-        subtitle="Port calls per half year, world total, first semester 2018–first semester 2022"
+        subtitle="Port calls per half year, world total, first semester 2018 – first semester 2022"
         suffix=""
         title="The roller-coaster of global port traffic"
         title_margin={50}

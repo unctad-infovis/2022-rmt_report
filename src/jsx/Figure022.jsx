@@ -50,7 +50,7 @@ function Figure022() {
         note="Propelled seagoing vessels of 100 gross tons and above, as of 1 January 2022."
         show_only_first_and_last_labels
         source="UNCTAD calculations, based on data from Clarksons Research."
-        subtitle="Average age of merchant fleet, 2011–2022"
+        subtitle="Average age of merchant fleet, 2012–2022"
         suffix=" years"
         title="The world’s shipping fleet is ageing"
         title_margin={60}
