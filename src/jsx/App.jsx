@@ -118,7 +118,7 @@ function App() {
   const track = (name) => {
     if (typeof analytics !== 'undefined') {
       analytics('event', 'Navigation Click', {
-        event_category: '2022-ldc_report',
+        event_category: '2022-rmt_report',
         event_label: name,
         transport_type: 'beacon'
       });
