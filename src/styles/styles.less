@@ -459,13 +459,52 @@
       }
     }
   }
+  .download_button {
+    margin: 50px 0 30px 0;
+    text-align: center;
+    a {
+      animation-iteration-count: infinite;
+      animation: button_animation 8s;
+      background-color: @unblue;
+      border-radius: 20px;
+      color: #fff;
+      display: inline-block;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 10px;
+      padding: 7px 30px;
+      text-decoration: none;
+      text-transform: uppercase;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  @keyframes button_animation {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    5% {
+       transform: translate3d(0, 20px, 0);
+    }
+    10% {
+       transform: translate3d(0, 0, 0);
+    }
+    15% {
+      transform: translate3d(0, 20px, 0);
+    }
+    25% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
   @keyframes animate {
     0% {
       transform: translateY(0px);
     }
   }
-
-
   .two_column_layout {
     align-items: flex-start;
     display: flex;
