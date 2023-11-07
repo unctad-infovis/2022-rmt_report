@@ -355,10 +355,10 @@ function App() {
               <div className="text_container">
                 <h4>Get the data on four key performance indicators</h4>
                 <ul>
-                  <li><a href="https://unctadstat.unctad.org/wds/TableViewer/tableView.aspx?ReportId=92">Liner Shipping Connectivity Index for all countries, container</a></li>
-                  <li><a href="https://unctadstat.unctad.org/wds/TableViewer/tableView.aspx?ReportId=194891">Time in port for top 20 countries, six different vessel types</a></li>
-                  <li><a href="https://unctadstat.unctad.org/wds/TableViewer/tableView.aspx?ReportId=170026">Port Liner Shipping Connectivity Index for all ports, container</a></li>
-                  <li><a href="https://unctadstat.unctad.org/wds/TableViewer/tableView.aspx?ReportId=194890">Port calls for top 20 countries, eight different vessel types</a></li>
+                  <li><a href="https://unctadstat.unctad.org/datacentre/dataviewer/US.LSCI">Liner Shipping Connectivity Index for all countries, container</a></li>
+                  <li><a href="https://unctadstat.unctad.org/datacentre/dataviewer/US.PortCalls_S">Time in port for top 20 countries, six different vessel types</a></li>
+                  <li><a href="https://unctadstat.unctad.org/datacentre/dataviewer/US.PLSCI">Port Liner Shipping Connectivity Index for all ports, container</a></li>
+                  <li><a href="https://unctadstat.unctad.org/datacentre/dataviewer/US.PortCallsArrivals_S">Port calls for top 20 countries, eight different vessel types</a></li>
                 </ul>
               </div>
             </div>
