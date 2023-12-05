@@ -36,25 +36,40 @@ function ProgressIndicator({
     }, 50);
   };
   return (
-    <div className="progress_indicator_container" style={{ top: `${window.location.href.includes('unctad.org') ? '30px' : '0'}` }}>
+    <div className="progress_indicator_container" style={{ top: `${window.location.href.includes('unctad.org') ? '0' : '0'}` }}>
       <button type="button" className="section" onClick={() => anchorClick('.section_1_container', 'Section 1')}>
-        <div className="progress_bar" style={{ width: `${section1Progress}%` }} />
+        {
+          // eslint-disable-jsx-a11y/control-has-associated-label
+          <div className="progress_bar" style={{ width: `${section1Progress}%` }} />
+        }
       </button>
       <div className="section_divider" />
       <button type="button" className="section" onClick={() => anchorClick('.section_2_container', 'Section 2')}>
-        <div className="progress_bar" style={{ width: `${section2Progress}%` }} />
+        {
+          // eslint-disable-jsx-a11y/control-has-associated-label
+          <div className="progress_bar" style={{ width: `${section2Progress}%` }} />
+          }
       </button>
       <div className="section_divider" />
       <button type="button" className="section" onClick={() => anchorClick('.section_3_container', 'Section 3')}>
-        <div className="progress_bar" style={{ width: `${section3Progress}%` }} />
+        {
+          // eslint-disable-jsx-a11y/control-has-associated-label
+          <div className="progress_bar" style={{ width: `${section3Progress}%` }} />
+        }
       </button>
       <div className="section_divider" />
       <button type="button" className="section" onClick={() => anchorClick('.section_4_container', 'Section 4')}>
-        <div className="progress_bar" style={{ width: `${section4Progress}%` }} />
+        {
+          // eslint-disable-jsx-a11y/control-has-associated-label
+          <div className="progress_bar" style={{ width: `${section4Progress}%` }} />
+        }
       </button>
       <div className="section_divider" />
       <button type="button" className="section" onClick={() => anchorClick('.section_5_container', 'Section 5')}>
-        <div className="progress_bar" style={{ width: `${section5Progress}%` }} />
+        {
+          // eslint-disable-jsx-a11y/control-has-associated-label
+          <div className="progress_bar" style={{ width: `${section5Progress}%` }} />
+        }
       </button>
     </div>
   );
