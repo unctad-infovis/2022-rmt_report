@@ -147,7 +147,7 @@ function App() {
     <div className="app" ref={appRef}>
       <Video anchorClick={anchorClick} />
       <PageNavigation appRef={appRef} />
-      <div className="download_button"><a href="https://unctad.org/rmt2023">See the Review of Maritime Transport 2023</a></div>
+      {/* <div className="download_button"><a href="https://unctad.org/rmt2023">See the Review of Maritime Transport 2023</a></div> */}
       <div className="two_column_layout center">
         <div className="left_column">
           <div className="text_container">
