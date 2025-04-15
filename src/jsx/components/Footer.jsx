@@ -1,17 +1,17 @@
-import React, { /* useState,  useEffect, useRef */ memo } from 'react';
-
-const analytics = window.gtag || undefined;
+import React, { /* useState,  useEffect, useRef */ memo, useCallback } from 'react';
 
 function Footer() {
-  const track = (name) => {
-    if (typeof analytics !== 'undefined') {
-      analytics('event', 'Press material', {
-        event_category: '2022-rmt_report',
-        event_label: name,
-        transport_type: 'beacon'
+  const analytics = window.gtag || undefined;
+  const track = useCallback((label_event = false, value_event = false) => {
+    if (typeof analytics !== 'undefined' && label_event !== false && value_event !== false) {
+      analytics('event', 'project_interaction', {
+        label: label_event,
+        project_name: '2022-rmt_report',
+        transport_type: 'beacon',
+        value: value_event
       });
     }
-  };
+  }, [analytics]);
   return (
     <div className="footer_container">
       <h2>What do you want to do next?</h2>
@@ -88,19 +88,19 @@ function Footer() {
                 <h4>Read the global press release</h4>
                 <ul>
                   <li>
-                    <a href="https://unctad.org/press-material/unctad-calls-investment-maritime-supply-chains-boost-sustainability-and-resilience" onClick={(event) => track(event.target.href)}>English</a>
+                    <a href="https://unctad.org/press-material/unctad-calls-investment-maritime-supply-chains-boost-sustainability-and-resilience" onClick={(event) => track('Anchor', event.target.href)}>English</a>
                     {', '}
-                    <a href="https://unctad.org/fr/press-material/la-cnuced-appelle-investir-dans-les-chaines-logistiques-maritimes-afin-de-renforcer" onClick={(event) => track(event.target.href)}>Français</a>
+                    <a href="https://unctad.org/fr/press-material/la-cnuced-appelle-investir-dans-les-chaines-logistiques-maritimes-afin-de-renforcer" onClick={(event) => track('Anchor', event.target.href)}>Français</a>
                     {', '}
-                    <a href="https://unctad.org/es/press-material/la-unctad-pide-que-se-invierta-en-las-cadenas-de-suministro-maritimas-para-impulsar" onClick={(event) => track(event.target.href)}>Español</a>
+                    <a href="https://unctad.org/es/press-material/la-unctad-pide-que-se-invierta-en-las-cadenas-de-suministro-maritimas-para-impulsar" onClick={(event) => track('Anchor', event.target.href)}>Español</a>
                     {', '}
-                    <a href="https://unctad.org/system/files/press-material/PR22025_RMT22_ar_Final_1.pdf" onClick={(event) => track(event.target.href)}>العربية</a>
+                    <a href="https://unctad.org/system/files/press-material/PR22025_RMT22_ar_Final_1.pdf" onClick={(event) => track('Anchor', event.target.href)}>العربية</a>
                     {', '}
-                    <a href="https://unctad.org/system/files/press-material/PR22025_RMT22_ch_Final_1.pdf" onClick={(event) => track(event.target.href)}>简体中文</a>
+                    <a href="https://unctad.org/system/files/press-material/PR22025_RMT22_ch_Final_1.pdf" onClick={(event) => track('Anchor', event.target.href)}>简体中文</a>
                     {', '}
-                    <a href="https://unctad.org/system/files/press-material/PR22025_RMT22_ru_Final.pdf" onClick={(event) => track(event.target.href)}>Русский</a>
+                    <a href="https://unctad.org/system/files/press-material/PR22025_RMT22_ru_Final.pdf" onClick={(event) => track('Anchor', event.target.href)}>Русский</a>
                     {', '}
-                    <a href="https://unctad.org/system/files/press-material/PR22025_RMT22_pt_Final.pdf" onClick={(event) => track(event.target.href)}>Português</a>
+                    <a href="https://unctad.org/system/files/press-material/PR22025_RMT22_pt_Final.pdf" onClick={(event) => track('Anchor', event.target.href)}>Português</a>
                   </li>
                 </ul>
               </li>

@@ -1,25 +1,25 @@
-import React, { /* useState, useEffect, useRef */ memo } from 'react';
+import React, { /* useState, useEffect, useRef */ memo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 // https://www.npmjs.com/package/scroll-into-view
 import scrollIntoView from 'scroll-into-view';
 
-const analytics = window.gtag || undefined;
-
 function ProgressIndicator({
   appRef, section1Progress, section2Progress, section3Progress, section4Progress, section5Progress
 }) {
-  const track = (name) => {
-    if (typeof analytics !== 'undefined') {
-      analytics('event', 'Progress Indicator Click', {
-        event_category: '2022-rmt_report',
-        event_label: name,
-        transport_type: 'beacon'
+  const analytics = window.gtag || undefined;
+  const track = useCallback((label_event = false, value_event = false) => {
+    if (typeof analytics !== 'undefined' && label_event !== false && value_event !== false) {
+      analytics('event', 'project_interaction', {
+        label: label_event,
+        project_name: '2022-rmt_report',
+        transport_type: 'beacon',
+        value: value_event
       });
     }
-  };
+  }, [analytics]);
   const anchorClick = (target, name) => {
-    track(name);
+    track('Anchor', name);
     setTimeout(() => {
       scrollIntoView(appRef.current.querySelector(target), {
         align: {
