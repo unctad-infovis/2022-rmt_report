@@ -19,7 +19,7 @@ function ProgressIndicator({
     }
   }, [analytics]);
   const anchorClick = (target, name) => {
-    track('Anchor', name);
+    track('Progress Indicator Click', name);
     setTimeout(() => {
       scrollIntoView(appRef.current.querySelector(target), {
         align: {
