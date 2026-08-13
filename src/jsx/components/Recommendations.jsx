@@ -30,7 +30,4 @@ Recommendations.propTypes = {
   recommendation_list: PropTypes.instanceOf(Array).isRequired
 };
 
-Recommendations.defaultProps = {
-};
-
 export default memo(Recommendations);

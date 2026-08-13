@@ -2,7 +2,7 @@ import React, { /* useState, */ useRef, useEffect, memo } from 'react';
 import PropTypes from 'prop-types';
 
 function PhotoHeadline({
-  img, max_width, text_lower, text_upper
+  img, max_width = 'auto', text_lower, text_upper
 }) {
   const waveRef1 = useRef();
   const waveRef2 = useRef();
@@ -43,10 +43,6 @@ PhotoHeadline.propTypes = {
   max_width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   text_upper: PropTypes.string.isRequired,
   text_lower: PropTypes.string.isRequired
-};
-
-PhotoHeadline.defaultProps = {
-  max_width: 'auto'
 };
 
 export default memo(PhotoHeadline);

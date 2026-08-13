@@ -50,7 +50,4 @@ Quote.propTypes = {
   second_line: PropTypes.string.isRequired
 };
 
-Quote.defaultProps = {
-};
-
 export default memo(Quote);

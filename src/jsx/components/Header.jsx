@@ -45,8 +45,4 @@ Header.propTypes = {
 
 };
 
-Header.defaultProps = {
-
-};
-
 export default memo(Header);

@@ -50,8 +50,4 @@ PageNavigation.propTypes = {
   appRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.instanceOf(Element) })
   ]).isRequired
 };
-PageNavigation.defaultProps = {
-
-};
-
 export default memo(PageNavigation);

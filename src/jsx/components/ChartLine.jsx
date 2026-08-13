@@ -47,7 +47,7 @@ Highcharts.SVGRenderer.prototype.symbols.download = (x, y, w, h) => {
 };
 
 function LineChart({
-  allow_decimals, change, chart_height, data, data_decimals, idx, line_width, note, plot_lines, prefix, show_only_first_and_last_labels, source, subtitle, suffix, title, title_margin, tooltip_date_interval, tooltip_label, ymax, ymin, ytick_interval
+  allow_decimals = true, change = false, chart_height = 600, data, data_decimals, idx, line_width = 5, note = false, plot_lines = [{}], prefix = '', show_only_first_and_last_labels = true, source, subtitle = false, suffix = '', title, title_margin = 40, tooltip_date_interval = 'year', tooltip_label = 'Year', ymax = undefined, ymin = undefined, ytick_interval = undefined
 }) {
   const chartRef = useRef();
   const isVisible = useIsVisible(chartRef, { once: true });
@@ -414,25 +414,6 @@ LineChart.propTypes = {
   ymax: PropTypes.number,
   ymin: PropTypes.number,
   ytick_interval: PropTypes.number
-};
-
-LineChart.defaultProps = {
-  allow_decimals: true,
-  change: false,
-  chart_height: 600,
-  line_width: 5,
-  note: false,
-  plot_lines: [{}],
-  prefix: '',
-  show_only_first_and_last_labels: true,
-  subtitle: false,
-  suffix: '',
-  title_margin: 40,
-  tooltip_date_interval: 'year',
-  tooltip_label: 'Year',
-  ymax: undefined,
-  ymin: undefined,
-  ytick_interval: undefined
 };
 
 export default memo(LineChart);

@@ -46,7 +46,7 @@ Highcharts.SVGRenderer.prototype.symbols.download = (x, y, w, h) => {
 };
 
 function ColumnChart({
-  data, data_decimals, export_title_margin, idx, note, source, standalone, subtitle, suffix, title, xlabel, xlabelrotation, ymax, ymin
+  data, data_decimals, export_title_margin = 0, idx, note = false, source, standalone = false, subtitle = false, suffix = '', title, xlabel = '', xlabelrotation = 0, ymax = undefined, ymin = undefined
 }) {
   const chartRef = useRef();
 
@@ -375,18 +375,6 @@ ColumnChart.propTypes = {
   xlabelrotation: PropTypes.number,
   ymax: PropTypes.number,
   ymin: PropTypes.number
-};
-
-ColumnChart.defaultProps = {
-  export_title_margin: 0,
-  note: false,
-  standalone: false,
-  subtitle: false,
-  suffix: '',
-  xlabel: '',
-  xlabelrotation: 0,
-  ymax: undefined,
-  ymin: undefined
 };
 
 export default memo(ColumnChart);
