@@ -1,27 +1,25 @@
-import React, { /* useState, useEffect, useRef */ memo } from 'react';
+import React, { /* useState, useEffect, useRef */ memo, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 // https://www.npmjs.com/package/react-is-visible
 import 'intersection-observer';
-import IsVisible from 'react-is-visible';
+import { useIsVisible } from 'react-is-visible';
 
 function Recommendations({ headline, recommendation_list }) {
+  const isVisibleRef1 = useRef();
+  const isVisible1 = useIsVisible(isVisibleRef1, { once: true });
   return (
-    <IsVisible once>
-      {(isVisible) => (
-        <div className={`recommendations_container ${(isVisible) ? 'visible' : ''}`}>
-          <h3>{headline}</h3>
-          <ul>
-            {recommendation_list && recommendation_list.map((el, i) => (
-              <li key={el}>
-                <div className="list_indicator">{i + 1}</div>
-                <div className="list_text">{el}</div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </IsVisible>
+    <div ref={isVisibleRef1} className={`recommendations_container ${(isVisible1) ? 'visible' : ''}`}>
+      <h3>{headline}</h3>
+      <ul>
+        {recommendation_list && recommendation_list.map((el, i) => (
+          <li key={el}>
+            <div className="list_indicator">{i + 1}</div>
+            <div className="list_text">{el}</div>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
