@@ -47,7 +47,7 @@ Highcharts.SVGRenderer.prototype.symbols.download = (x, y, w, h) => {
 };
 
 function LineChart({
-  allow_decimals = true, change = false, chart_height = 600, data, data_decimals, idx, line_width = 5, note = false, plot_lines = [{}], prefix = '', show_only_first_and_last_labels = true, source, subtitle = false, suffix = '', title, title_margin = 40, tooltip_date_interval = 'year', tooltip_label = 'Year', ymax = undefined, ymin = undefined, ytick_interval = undefined
+  allow_decimals = true, change = false, chart_height = 600, data, data_decimals, idx, restrict_data = false, line_width = 5, note = false, plot_lines = [{}], prefix = '', show_only_first_and_last_labels = true, source, subtitle = false, suffix = '', title, title_margin = 40, tooltip_date_interval = 'year', tooltip_label = 'Year', ymax = undefined, ymin = undefined, ytick_interval = undefined
 }) {
   const chartRef = useRef();
   const isVisible = useIsVisible(chartRef, { once: true });
@@ -56,6 +56,14 @@ function LineChart({
 
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
+      // Preserve chart context without exposing the data table or point values.
+      ...(restrict_data ? {
+        accessibility: {
+          screenReaderSection: {
+            beforeChartFormat: Highcharts.getOptions().accessibility.screenReaderSection.beforeChartFormat.replace('{viewTableButton}', '')
+          }
+        }
+      } : {}),
       caption: {
         align: 'left',
         margin: 15,
@@ -74,7 +82,7 @@ function LineChart({
           load() {
             // eslint-disable-next-line react/no-this-in-sfc
             this.renderer.image(`${window.location.href.includes('unctad.org') ? 'https://storage.unctad.org/2022-rmt_report/' : './'}assets/img/unctad_logo.svg`, 5, 15, 80, 100).add();
-            if (show_only_first_and_last_labels === true) {
+            if (!restrict_data && show_only_first_and_last_labels === true) {
               setTimeout(() => {
                 // eslint-disable-next-line react/no-this-in-sfc
                 this.series.forEach((series) => {
@@ -132,7 +140,7 @@ function LineChart({
         enabled: true,
         buttons: {
           contextButton: {
-            menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'downloadPDF', 'separator', 'downloadCSV'],
+            menuItems: restrict_data ? ['viewFullscreen', 'separator', 'downloadPNG', 'downloadPDF'] : ['viewFullscreen', 'separator', 'downloadPNG', 'downloadPDF', 'separator', 'downloadCSV'],
             symbol: 'download',
             symbolFill: '#000'
           }
@@ -153,6 +161,13 @@ function LineChart({
         verticalAlign: 'top'
       },
       plotOptions: {
+        ...(restrict_data ? {
+          series: {
+            accessibility: { enabled: false },
+            enableMouseTracking: false,
+            dataLabels: { enabled: false }
+          }
+        } : {}),
         line: {
           animation: {
             duration: 3000,
@@ -274,6 +289,7 @@ function LineChart({
         x: 100
       },
       tooltip: {
+        enabled: !restrict_data,
         backgroundColor: '#fff',
         borderColor: '#ccc',
         borderRadius: 0,
@@ -372,7 +388,7 @@ function LineChart({
     chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
 
     Highcharts.charts[0].redraw(true);
-  }, [allow_decimals, change, chart_height, data, data_decimals, idx, line_width, month_names, note, plot_lines, prefix, show_only_first_and_last_labels, source, subtitle, suffix, title, title_margin, tooltip_date_interval, tooltip_label, ymax, ymin, ytick_interval]);
+  }, [restrict_data, allow_decimals, change, chart_height, data, data_decimals, idx, line_width, month_names, note, plot_lines, prefix, show_only_first_and_last_labels, source, subtitle, suffix, title, title_margin, tooltip_date_interval, tooltip_label, ymax, ymin, ytick_interval]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -399,6 +415,7 @@ LineChart.propTypes = {
   chart_height: PropTypes.number,
   data_decimals: PropTypes.number.isRequired,
   idx: PropTypes.string.isRequired,
+  restrict_data: PropTypes.bool,
   line_width: PropTypes.number,
   note: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   plot_lines: PropTypes.instanceOf(Array),

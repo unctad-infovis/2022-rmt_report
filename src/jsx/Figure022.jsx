@@ -46,6 +46,7 @@ function Figure022() {
         data={dataFigure}
         data_decimals={1}
         idx="022"
+        restrict_data
         line_width={4}
         note="Propelled seagoing vessels of 100 gross tons and above, as of 1 January 2022."
         show_only_first_and_last_labels

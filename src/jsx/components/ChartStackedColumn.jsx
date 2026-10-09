@@ -46,7 +46,7 @@ Highcharts.SVGRenderer.prototype.symbols.download = (x, y, w, h) => {
 };
 
 function ColumnChart({
-  data, data_decimals, export_title_margin = 0, idx, note = false, source, standalone = false, subtitle = false, suffix = '', title, xlabel = '', xlabelrotation = 0, ymax = undefined, ymin = undefined
+  data, data_decimals, export_title_margin = 0, idx, restrict_data = false, note = false, source, standalone = false, subtitle = false, suffix = '', title, xlabel = '', xlabelrotation = 0, ymax = undefined, ymin = undefined
 }) {
   const chartRef = useRef();
 
@@ -54,6 +54,14 @@ function ColumnChart({
   const isVisible = useIsVisible(chartRef, { once: true });
   const createChart = useCallback(() => {
     Highcharts.chart(`chartIdx${idx}`, {
+      // Preserve chart context without exposing the data table or point values.
+      ...(restrict_data ? {
+        accessibility: {
+          screenReaderSection: {
+            beforeChartFormat: Highcharts.getOptions().accessibility.screenReaderSection.beforeChartFormat.replace('{viewTableButton}', '')
+          }
+        }
+      } : {}),
       caption: {
         align: 'left',
         margin: 15,
@@ -110,7 +118,7 @@ function ColumnChart({
       exporting: {
         buttons: {
           contextButton: {
-            menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'downloadPDF', 'separator', 'downloadCSV'],
+            menuItems: restrict_data ? ['viewFullscreen', 'separator', 'downloadPNG', 'downloadPDF'] : ['viewFullscreen', 'separator', 'downloadPNG', 'downloadPDF', 'separator', 'downloadCSV'],
             symbol: 'download',
             symbolFill: '#000'
           }
@@ -131,6 +139,13 @@ function ColumnChart({
         verticalAlign: 'top'
       },
       plotOptions: {
+        ...(restrict_data ? {
+          series: {
+            accessibility: { enabled: false },
+            enableMouseTracking: false,
+            dataLabels: { enabled: false }
+          }
+        } : {}),
         column: {
           animation: {
             duration: 2000,
@@ -139,7 +154,7 @@ function ColumnChart({
           enableMouseTracking: false,
           groupPadding: 0.05,
           dataLabels: {
-            enabled: true,
+            enabled: !restrict_data,
             formatter() {
               // eslint-disable-next-line react/no-this-in-sfc
               return `${roundNr(this.y, 2)}`;
@@ -305,7 +320,7 @@ function ColumnChart({
         showFirstLabel: true,
         showLastLabel: true,
         stackLabels: {
-          enabled: true,
+          enabled: !restrict_data,
           formatter() {
             // eslint-disable-next-line react/no-this-in-sfc
             return `+${roundNr(this.total, data_decimals)}${suffix}`;
@@ -340,7 +355,7 @@ function ColumnChart({
       }
     });
     chartRef.current.querySelector(`#chartIdx${idx}`).style.opacity = 1;
-  }, [idx, data, data_decimals, export_title_margin, note, source, subtitle, suffix, title, xlabel, xlabelrotation, ymax, ymin]);
+  }, [restrict_data, idx, data, data_decimals, export_title_margin, note, source, subtitle, suffix, title, xlabel, xlabelrotation, ymax, ymin]);
 
   useEffect(() => {
     if (isVisible === true) {
@@ -365,6 +380,7 @@ ColumnChart.propTypes = {
   data_decimals: PropTypes.number.isRequired,
   export_title_margin: PropTypes.number,
   idx: PropTypes.string.isRequired,
+  restrict_data: PropTypes.bool,
   note: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   source: PropTypes.string.isRequired,
   standalone: PropTypes.bool,

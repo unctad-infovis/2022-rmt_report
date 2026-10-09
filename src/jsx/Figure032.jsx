@@ -47,6 +47,7 @@ function Figure032() {
         data={dataFigure}
         data_decimals={1}
         idx="032"
+        restrict_data
         line_width={4}
         note=""
         prefix="$"
